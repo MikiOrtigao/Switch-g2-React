@@ -1,1 +1,53 @@
 // Here you can add other styles
+.sidebar .nav-title {
+  padding: 0.75rem 1rem;
+  font-size: 80%;
+  font-weight: 700;
+  color: #323232;
+  text-transform: uppercase;
+}
+
+.sidebar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+  color: #323232;
+  background: #d8c2a5;
+}
+
+
+.sidebar .sidebar-close {
+  position: absolute;
+  right: 0;
+  display: none;
+  padding: 0 1rem;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 55px;
+  color: #323232;
+  background: 0;
+  border: 0;
+  opacity: .8;
+}
+
+.sidebar .sidebar-close:hover {
+  opacity: 1;
+}
+
+.sidebar .sidebar-header {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .sidebar-form .form-control {
+  color: #323232;
+  background:  #d8c2a5;
+  border: 0;
+}
+
+
