@@ -19,6 +19,30 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
+      name: 'Home',
+      url: '/theme/home',
+      icon: 'icon-home',
+    },{
+      name: 'Area',
+      url: '/theme/area',
+      icon: 'icon-globe',
+    },
+    {
+      name: 'Room',
+      url: '/theme/room',
+      icon: 'icon-home',
+    },
+    {
+      name: 'Energy',
+      url: '/theme/energy',
+      icon: 'icon-bulb',
+    },
+    {
+      name: 'Sensor',
+      url: '/theme/sensor',
+      icon: 'icon-speedometer\n',
+    },
+    {
       name: 'Colors',
       url: '/theme/colors',
       icon: 'icon-drop',
