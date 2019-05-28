@@ -22,6 +22,18 @@ export default {
       name: 'Home',
       url: '/theme/home',
       icon: 'icon-home',
+      children: [
+        {
+          name: 'Home Monitoring',
+          url: '/base/tooltips',
+          icon: 'sun',
+          },
+        {
+          name: 'Home Configuration',
+          url: '/base/tooltips',
+          icon: 'icon-puzzle',
+        },
+      ],
     },{
       name: 'Area',
       url: '/theme/area',
@@ -35,7 +47,7 @@ export default {
     {
       name: 'Energy',
       url: '/theme/energy',
-      icon: 'icon-bulb',
+      icon: 'icon-energy\n',
     },
     {
       name: 'Sensor',
