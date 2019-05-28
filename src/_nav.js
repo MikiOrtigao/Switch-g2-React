@@ -19,6 +19,11 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
+      name: 'Area',
+      url: '/theme/area',
+      icon: 'icon-globe',
+    },
+    {
       name: 'House',
       url: '/house',
       icon: 'icon-home',
@@ -34,15 +39,23 @@ export default {
           icon: 'icon-puzzle',
         },
       ],
-    },{
-      name: 'Area',
-      url: '/theme/area',
-      icon: 'icon-globe',
     },
     {
       name: 'Room',
       url: '/theme/room',
       icon: 'icon-home',
+      children: [
+        {
+          name: 'Room Monitoring',
+          url: '/room/monitoring',
+          icon: 'icon-puzzle',
+        },
+        {
+          name: 'Room Configuration',
+          url: '/room/configuration',
+          icon: 'icon-puzzle',
+        },
+      ],
     },
     {
       name: 'Energy',

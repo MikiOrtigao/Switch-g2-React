@@ -29,14 +29,6 @@ const list = [
   id: 'US149',
     us: 'Detach a room from a house grid.'
 },
-  {
-    id: 'US250',
-    us: 'Get a list of all sensors in a room.'
-  },
-  {
-    id: 'US253',
-    us: 'Add a new sensor to a room from the list of available sensor types.'
-  },
 ];
 
 const UserStoryList = () => (

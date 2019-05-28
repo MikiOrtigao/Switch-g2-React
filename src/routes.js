@@ -33,6 +33,8 @@ const Modals = React.lazy(() => import('./views/Notifications/Modals'));
 const Colors = React.lazy(() => import('./views/Theme/Colors'));
 const Typography = React.lazy(() => import('./views/Theme/Typography'));
 const HouseMonitoring = React.lazy(()=> import('./views/House/HouseMonitoring'))
+const RoomMonitoring = React.lazy(()=> import('./views/Room/RoomMonitoring'))
+const RoomConfiguration = React.lazy(()=> import('./views/Room/RoomConfiguration'))
 const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfiguration'))
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
@@ -74,6 +76,8 @@ const routes = [
   { path: '/icons/font-awesome', name: 'Font Awesome', component: FontAwesome },
   { path: '/icons/simple-line-icons', name: 'Simple Line Icons', component: SimpleLineIcons },
   { path: '/house/monitoring', name: 'House Monitoring', component: HouseMonitoring },
+  { path: '/room/monitoring', name: 'Room Monitoring', component: RoomMonitoring },
+  { path: '/room/configuration', name: 'Room Configuration', component: RoomConfiguration },
   { path: '/house/configuration', name: 'House Configuration', component: HouseConfiguration },
   { path: '/notifications', exact: true, name: 'Notifications', component: Alerts },
   { path: '/notifications/alerts', name: 'Alerts', component: Alerts },

@@ -6,14 +6,6 @@ const list = [
     us: 'Get the current temperature in the house area.'
 },
 {
-  id: 'US605',
-    us: 'Get the current temperature in a room.'
-},
-{
-  id: 'US610',
-    us: 'Get the maximum temperature in a room in a given day.'
-},
-{
   id: 'US620',
     us: 'Get the total rainfall in the house area for a given day.'
 },
