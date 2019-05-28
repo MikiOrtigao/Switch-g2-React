@@ -7,11 +7,11 @@ const list = [
 },
 {
   id: 'US605',
-    us: 'Get the current temperature in a room'
+    us: 'Get the current temperature in a room.'
 },
 {
   id: 'US610',
-    us: 'Get the maximum temperature in a room in a given day'
+    us: 'Get the maximum temperature in a room in a given day.'
 },
 {
   id: 'US620',
