@@ -19,18 +19,18 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
-      name: 'Home',
-      url: '/theme/home',
+      name: 'House',
+      url: '/theme/house',
       icon: 'icon-home',
       children: [
         {
-          name: 'Home Monitoring',
-          url: '/home/monitoring',
+          name: 'House Monitoring',
+          url: '/house/monitoring',
           icon: 'icon-puzzle',
           },
         {
-          name: 'Home Configuration',
-          url: '/home/configuration',
+          name: 'House Configuration',
+          url: '/house/configuration',
           icon: 'icon-puzzle',
         },
       ],

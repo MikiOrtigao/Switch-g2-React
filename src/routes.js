@@ -32,15 +32,15 @@ const Badges = React.lazy(() => import('./views/Notifications/Badges'));
 const Modals = React.lazy(() => import('./views/Notifications/Modals'));
 const Colors = React.lazy(() => import('./views/Theme/Colors'));
 const Typography = React.lazy(() => import('./views/Theme/Typography'));
-const HomeMonitoring = React.lazy(()=> import('./views/Home/HomeMonitoring'))
-const HomeConfiguration = React.lazy(()=> import('./views/Home/HomeConfiguration'))
+const HouseMonitoring = React.lazy(()=> import('./views/House/HouseMonitoring'))
+const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfiguration'))
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/', exact: true, name: 'Home' },
+  { path: '/', exact: true, name: 'House' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
@@ -73,8 +73,8 @@ const routes = [
   { path: '/icons/flags', name: 'Flags', component: Flags },
   { path: '/icons/font-awesome', name: 'Font Awesome', component: FontAwesome },
   { path: '/icons/simple-line-icons', name: 'Simple Line Icons', component: SimpleLineIcons },
-  { path: '/home/monitoring', name: 'Home Monitoring', component: HomeMonitoring },
-  { path: '/home/configuration', name: 'Home Configuration', component: HomeConfiguration },
+  { path: '/house/monitoring', name: 'House Monitoring', component: HouseMonitoring },
+  { path: '/house/configuration', name: 'House Configuration', component: HouseConfiguration },
   { path: '/notifications', exact: true, name: 'Notifications', component: Alerts },
   { path: '/notifications/alerts', name: 'Alerts', component: Alerts },
   { path: '/notifications/badges', name: 'Badges', component: Badges },
