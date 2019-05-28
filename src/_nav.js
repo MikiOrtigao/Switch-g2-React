@@ -25,12 +25,12 @@ export default {
       children: [
         {
           name: 'Home Monitoring',
-          url: '/base/tooltips',
-          icon: 'sun',
+          url: '/home/monitoring',
+          icon: 'icon-puzzle',
           },
         {
           name: 'Home Configuration',
-          url: '/base/tooltips',
+          url: '/home/configuration',
           icon: 'icon-puzzle',
         },
       ],
