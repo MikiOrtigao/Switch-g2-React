@@ -69,11 +69,15 @@
 }
 
 .sidebar .nav-link.active {
-  color: #fff;
-  background: #78b2ac;
+  color: #000000;
+  background: #d8cbc1;
 }
 
 .sidebar .nav-link:hover {
   color: #fff;
   background: #d8b975;
+}
+
+.sidebar .nav-link.active .nav-icon {
+  color: #187a29;
 }

@@ -43,7 +43,7 @@ export default {
     {
       name: 'Room',
       url: '/theme/room',
-      icon: 'icon-home',
+      icon: 'fa fa-bed fa-lg mt-4',
       children: [
         {
           name: 'Room Monitoring',
