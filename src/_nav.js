@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'House',
-      url: '/theme/house',
+      url: '/house',
       icon: 'icon-home',
       children: [
         {
