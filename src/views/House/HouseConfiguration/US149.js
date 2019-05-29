@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import {Collapse, Button, CardBody, Card, CardHeader, Form, FormGroup, Label, Input, CardFooter} from 'reactstrap';
 
 class US149 extends Component {
   constructor(props) {
@@ -18,12 +18,35 @@ class US149 extends Component {
         <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Detach a room from a house grid. (US149)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
+            <CardHeader>
+              <strong>US 147</strong>
+            </CardHeader>
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-              enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident.
+              <Form action="" method="post">
+                <FormGroup>
+                  <FormGroup>
+                    <Label>Select Energy Grid</Label>
+                    <Input type="select" name="select" id="select">
+                      <option value="0">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                    </Input>
+                  </FormGroup>
+                  <Label>Select Room</Label>
+                  <Input type="select" name="select" id="select">
+                    <option value="0">Please select</option>
+                    <option value="1">Option #1</option>
+                    <option value="2">Option #2</option>
+                    <option value="3">Option #3</option>
+                  </Input>
+                </FormGroup>
+              </Form>
             </CardBody>
+            <CardFooter>
+              <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
+              <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
+            </CardFooter>
           </Card>
         </Collapse>
       </div>
