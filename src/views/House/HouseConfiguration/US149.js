@@ -15,7 +15,7 @@ class US149 extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Detach a room from a house grid. (US149)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Detach a room from a house grid. (US149)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>

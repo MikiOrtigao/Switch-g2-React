@@ -15,7 +15,7 @@ class US145 extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Get a list of existing rooms attached to a house grid. (US145)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Get a list of existing rooms attached to a house grid. (US145)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>

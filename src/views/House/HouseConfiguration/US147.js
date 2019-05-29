@@ -15,7 +15,7 @@ class US147 extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Attach a room to a house grid. (US147)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Attach a room to a house grid. (US147)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>

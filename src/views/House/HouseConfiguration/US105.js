@@ -27,7 +27,7 @@ class US105 extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Add a new room to the house. (US105)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Add a new room to the house. (US105)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardHeader>

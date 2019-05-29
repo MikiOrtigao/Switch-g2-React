@@ -27,7 +27,7 @@ class US130 extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Create a new house grid. (US130)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Create a new house grid. (US130)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardHeader>
