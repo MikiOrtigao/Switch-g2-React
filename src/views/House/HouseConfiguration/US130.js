@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import {
+  Collapse,
+  Button,
+  CardBody,
+  Card,
+  CardHeader,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+  CardFooter
+} from 'reactstrap';
 
 class US130 extends Component {
   constructor(props) {
@@ -18,12 +30,25 @@ class US130 extends Component {
         <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Create a new house grid. (US130)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
+            <CardHeader>
+              <strong>US 130</strong>
+            </CardHeader>
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-              enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident.
+              <Form action="" method="post">
+                <FormGroup>
+                  <Label htmlFor="nf-email">Designation of the new Energy Grid</Label>
+                  <Input type="text" placeholder="Enter Designation.."/>
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="nf-password">Insert the maximum contracted power</Label>
+                  <Input type="number" placeholder="Enter Maximum Contracted Power.."/>
+                </FormGroup>
+              </Form>
             </CardBody>
+            <CardFooter>
+              <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
+              <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
+            </CardFooter>
           </Card>
         </Collapse>
       </div>
