@@ -10,7 +10,7 @@ import {
   Label,
   Input,
   FormText,
-  CardFooter
+  CardFooter, ListGroup, ListGroupItem, Badge
 } from 'reactstrap';
 
 class US108 extends Component {
@@ -31,26 +31,15 @@ class US108 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardHeader>
-              <strong>US 108</strong>
+              <i className="fa fa-align-justify"></i><strong>List of Rooms</strong>
             </CardHeader>
             <CardBody>
-              <Form action="" method="post">
-                <FormGroup>
-                  <Label htmlFor="nf-email">Email</Label>
-                  <Input type="email" id="nf-email" name="nf-email" placeholder="Enter Email.." autoComplete="email"/>
-                  <FormText className="help-block">Please enter your email</FormText>
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="nf-password">Password</Label>
-                  <Input type="password" id="nf-password" name="nf-password" placeholder="Enter Password.." autoComplete="current-password"/>
-                  <FormText className="help-block">Please enter your password</FormText>
-                </FormGroup>
-              </Form>
+              <ListGroup>
+                <ListGroupItem>B107</ListGroupItem>
+                <ListGroupItem>B106</ListGroupItem>
+                <ListGroupItem>B109</ListGroupItem>
+              </ListGroup>
             </CardBody>
-            <CardFooter>
-              <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
-              <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
-            </CardFooter>
           </Card>
         </Collapse>
       </div>

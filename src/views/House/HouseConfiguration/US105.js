@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Collapse,
   Button,
@@ -17,33 +17,48 @@ class US105 extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {collapse: false};
   }
 
   toggle() {
-    this.setState(state => ({ collapse: !state.collapse }));
+    this.setState(state => ({collapse: !state.collapse}));
   }
 
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Add a new room to the house. (US105)</Button>
+        <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Add a new room to the
+          house. (US105)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardHeader>
-              <strong>Normal</strong> Form
+              <strong>US 105</strong>
             </CardHeader>
             <CardBody>
               <Form action="" method="post">
                 <FormGroup>
-                  <Label htmlFor="nf-email">Email</Label>
-                  <Input type="email" id="nf-email" name="nf-email" placeholder="Enter Email.." autoComplete="email"/>
-                  <FormText className="help-block">Please enter your email</FormText>
+                  <Label>Room Name</Label>
+                  <Input type="text" placeholder="Enter Name.."/>
                 </FormGroup>
                 <FormGroup>
-                  <Label htmlFor="nf-password">Password</Label>
-                  <Input type="password" id="nf-password" name="nf-password" placeholder="Enter Password.." autoComplete="current-password"/>
-                  <FormText className="help-block">Please enter your password</FormText>
+                  <Label>Room Description</Label>
+                  <Input type="text" placeholder="Enter Description.."/>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Room House Floor</Label>
+                  <Input type="number" placeholder="Enter Floor.."/>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Room Width</Label>
+                  <Input type="number" placeholder="Enter Width.."/>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Room Length</Label>
+                  <Input type="number" placeholder="Enter Length.."/>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Room Height</Label>
+                  <Input type="number" placeholder="Enter Height.."/>
                 </FormGroup>
               </Form>
             </CardBody>
