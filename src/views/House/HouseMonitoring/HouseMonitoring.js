@@ -6,7 +6,7 @@ import US630 from "./US630";
 import US631 from "./US631";
 import US633 from "./US633";
 
-class ExampleToggle extends Component {
+class HouseMonitoring extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -33,4 +33,4 @@ class ExampleToggle extends Component {
   }
 }
 
-export default ExampleToggle;
+export default HouseMonitoring;

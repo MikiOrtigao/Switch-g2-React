@@ -31,29 +31,29 @@ export default {
         {
           name: 'House Monitoring',
           url: '/house/monitoring',
-          icon: 'icon-puzzle',
+          icon: 'cui-sun icons',
           },
         {
           name: 'House Configuration',
           url: '/house/configuration',
-          icon: 'icon-puzzle',
+          icon: 'fa fa-wrench fa-lg',
         },
       ],
     },
     {
       name: 'Room',
       url: '/theme/room',
-      icon: 'fa fa-bed fa-lg mt-4',
+      icon: 'fa fa-bed fa-lg',
       children: [
         {
           name: 'Room Monitoring',
           url: '/room/monitoring',
-          icon: 'icon-puzzle',
+          icon: 'fa fa-thermometer fa-lg',
         },
         {
           name: 'Room Configuration',
           url: '/room/configuration',
-          icon: 'icon-puzzle',
+          icon: 'fa fa-wrench fa-lg',
         },
       ],
     },

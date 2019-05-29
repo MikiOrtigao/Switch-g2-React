@@ -32,8 +32,8 @@ const Badges = React.lazy(() => import('./views/Notifications/Badges'));
 const Modals = React.lazy(() => import('./views/Notifications/Modals'));
 const Colors = React.lazy(() => import('./views/Theme/Colors'));
 const Typography = React.lazy(() => import('./views/Theme/Typography'));
-const HouseMonitoring = React.lazy(()=> import('./views/House/HouseMonitoring/ExampleToggle'))
-const RoomMonitoring = React.lazy(()=> import('./views/Room/RoomMonitoring'))
+const HouseMonitoring = React.lazy(()=> import('./views/House/HouseMonitoring/HouseMonitoring'))
+const RoomMonitoring = React.lazy(()=> import('./views/Room/RoomMonitoring/RoomMonitoring'))
 const RoomConfiguration = React.lazy(()=> import('./views/Room/RoomConfiguration'))
 const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfiguration/Example'))
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));

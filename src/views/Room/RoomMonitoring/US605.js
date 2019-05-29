@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-import 'react-day-picker/lib/style.css';
-import DatePickerWithTwoDates from "./DatePickerWithTwoDates";
 
-class US633 extends Component {
+class US605 extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -17,11 +15,14 @@ class US633 extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Get the day with the highest temperature amplitude in the house area in a given period. (US633)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Get the current temperature in the house area. (US600)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              <DatePickerWithTwoDates/>
+              Anim pariatur cliche reprehenderit,
+              enim eiusmod high life accusamus terry richardson ad squid. Nihil
+              anim keffiyeh helvetica, craft beer labore wes anderson cred
+              nesciunt sapiente ea proident.
             </CardBody>
           </Card>
         </Collapse>
@@ -30,4 +31,4 @@ class US633 extends Component {
   }
 }
 
-export default US633;
+export default US605;
