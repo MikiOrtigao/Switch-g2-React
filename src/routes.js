@@ -35,7 +35,7 @@ const Typography = React.lazy(() => import('./views/Theme/Typography'));
 const HouseMonitoring = React.lazy(()=> import('./views/House/HouseMonitoring/ExampleToggle'))
 const RoomMonitoring = React.lazy(()=> import('./views/Room/RoomMonitoring'))
 const RoomConfiguration = React.lazy(()=> import('./views/Room/RoomConfiguration'))
-const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfiguration'))
+const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfiguration/Example'))
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
