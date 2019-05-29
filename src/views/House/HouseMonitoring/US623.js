@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import DatePickerWithTwoDates from "./DatePickerWithTwoDates";
 
 class US623 extends Component {
   constructor(props) {
@@ -19,10 +20,7 @@ class US623 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-              enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident.
+              <DatePickerWithTwoDates/>
             </CardBody>
           </Card>
         </Collapse>
