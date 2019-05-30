@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import FetchTest from "./FetchTest";
+import US600Test from "./US600Test";
 
 class US600 extends Component {
   constructor(props) {
@@ -19,10 +21,9 @@ class US600 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-              enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident.
+              <td>
+                <US600Test  />
+              </td>
             </CardBody>
           </Card>
         </Collapse>
