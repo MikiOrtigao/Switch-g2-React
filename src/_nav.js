@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'Area',
-      url: '/theme/area',
+      url: '/error',
       icon: 'icon-globe',
     },
     {
@@ -59,12 +59,12 @@ export default {
     },
     {
       name: 'Energy',
-      url: '/theme/energy',
+      url: '/error',
       icon: 'icon-energy\n',
     },
     {
       name: 'Sensor',
-      url: '/theme/sensor',
+      url: '/error',
       icon: 'icon-speedometer\n',
     },
     {
