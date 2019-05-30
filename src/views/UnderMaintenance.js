@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Error extends Component {
+class UnderMaintenance extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -20,5 +20,5 @@ class Error extends Component {
   }
 }
 
-export default Error;
+export default UnderMaintenance;
 

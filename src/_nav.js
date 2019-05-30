@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'Area',
-      url: '/error',
+      url: '/maintenance',
       icon: 'icon-globe',
     },
     {
@@ -59,12 +59,12 @@ export default {
     },
     {
       name: 'Energy',
-      url: '/error',
+      url: '/maintenance',
       icon: 'icon-energy\n',
     },
     {
       name: 'Sensor',
-      url: '/error',
+      url: '/maintenance',
       icon: 'icon-speedometer\n',
     },
     {

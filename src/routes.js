@@ -39,7 +39,7 @@ const HouseConfiguration = React.lazy(()=> import('./views/House/HouseConfigurat
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
-const Error = React.lazy(() => import('./views/Error'));
+const UnderMaintenance = React.lazy(() => import('./views/UnderMaintenance'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -80,7 +80,7 @@ const routes = [
   { path: '/room/monitoring', name: 'Room Monitoring', component: RoomMonitoring },
   { path: '/room/configuration', name: 'Room Configuration', component: RoomConfiguration },
   { path: '/house/configuration', name: 'House Configuration', component: HouseConfiguration },
-  { path: '/error', name: 'Error', component: Error },
+  { path: '/maintenance', name: 'UnderMaintenance', component: UnderMaintenance },
   { path: '/notifications', exact: true, name: 'Notifications', component: Alerts },
   { path: '/notifications/alerts', name: 'Alerts', component: Alerts },
   { path: '/notifications/badges', name: 'Badges', component: Badges },
