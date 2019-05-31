@@ -9,7 +9,7 @@ export function fetchGAs (){
   return dispatch => {
     dispatch(fetchGAsStarted()); // antes de fazer o get, coloca o loading a true
     axios
-      .get(`http://localhost:9898/geographic_area_settings/areas`)
+      .get(`http://localhost:9999/geographic_area_settings/areas`)
       .then(res => {
         dispatch(fetchGAsSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })

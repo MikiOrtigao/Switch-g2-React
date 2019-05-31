@@ -12,6 +12,7 @@ import {
   FormText,
   CardFooter, ListGroup, ListGroupItem, Badge
 } from 'reactstrap';
+import US108NoRedux from "./USNoRedux/US108NoRedux";
 
 class US108 extends Component {
   constructor(props) {
@@ -35,9 +36,7 @@ class US108 extends Component {
             </CardHeader>
             <CardBody>
               <ListGroup>
-                <ListGroupItem>B107</ListGroupItem>
-                <ListGroupItem>B106</ListGroupItem>
-                <ListGroupItem>B109</ListGroupItem>
+                <US108NoRedux/>
               </ListGroup>
             </CardBody>
           </Card>

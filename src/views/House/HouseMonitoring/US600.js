@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-import FetchTest from "./FetchTest";
+import US600NoRedux from "./USNoRedux/US600NoRedux";
 import US600Test from "./US600Test";
 
 class US600 extends Component {
@@ -21,15 +21,14 @@ class US600 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              <td>
-                <US600Test  />
-              </td>
+                <US600NoRedux  />
             </CardBody>
           </Card>
         </Collapse>
       </div>
     );
   }
+
 }
 
 export default US600;
