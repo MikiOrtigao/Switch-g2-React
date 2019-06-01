@@ -34,6 +34,8 @@ import US108Select from "./US108Select";
 
 
   getSensorsInARoom(){
+    var {item} = this.state;
+
     return (
       <div>
 
