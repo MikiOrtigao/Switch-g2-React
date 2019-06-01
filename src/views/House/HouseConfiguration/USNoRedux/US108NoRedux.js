@@ -45,6 +45,7 @@ class US108NoRedux extends Component {
               <Card>
                 <CardBody>
                   <Table responsive>
+                    <thead>
                     <tr>
                       <th>{headers.name}</th>
                       <th>{headers.floor}</th>
@@ -52,6 +53,8 @@ class US108NoRedux extends Component {
                       <th>{headers.length}</th>
                       <th>{headers.width}</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {item.map(row => (
                       <tr key={row.id}>
                         <td>{row.name}</td>
@@ -60,6 +63,7 @@ class US108NoRedux extends Component {
                         <td>{row.length}</td>
                         <td>{row.width}</td>
                       </tr>))}
+                    </tbody>
                   </Table>
                 </CardBody>
               </Card>
