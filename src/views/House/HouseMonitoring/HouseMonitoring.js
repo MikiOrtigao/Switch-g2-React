@@ -19,6 +19,7 @@ class HouseMonitoring extends Component {
 
   render() {
     return (
+
       <div>
         <h2>Welcome to the House Monitoring Menu.</h2>
         <h4>Please select the US you want to run.</h4>

@@ -7,8 +7,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import configureStore from './views/House/HouseMonitoring/configureStore';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
+import configureStore from './views/House/HouseMonitoring/configureStore';
+import Reducers from './views/House/HouseMonitoring/Reducers'
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
@@ -16,7 +19,8 @@ import configureStore from './views/House/HouseMonitoring/configureStore';
 serviceWorker.unregister();
 
 
-const store = configureStore()
+const store = createStore(Reducers, applyMiddleware(thunk));
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -7,7 +7,7 @@ import {
 
 
 
-const initialstate = {
+const initialState = {
   users: {
     loading: false,
     error: null,
@@ -16,40 +16,34 @@ const initialstate = {
 };
 
 
-function usersReducer(state = initialstate, action) {
+export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_GAS_STARTED:
       return {
         ...state,
-        users: {  // reducer do user
-          loading: true, // coloca o loading a true
-          error: null,
-          data: {}
-        }
-      }
+         // reducer do user
+          loading: true // coloca o loading a true
+
+      };
     case FETCH_GAS_SUCCESS:
       return {
         ...state,
-        users: { // reducer de sucesso
-          loading: false, //loading fica falso - o componente fica renderizado
-          error: null,
-          data: {...action.payload.data}
-        }
-      }
+        loading: false, //loading fica falso - o componente fica renderizado
+        error: null,
+        data: [...action.payload.data]
+
+      };
     case FETCH_GAS_FAILURE:
       return {
         ...state,
-        users: {
           loading: false,
-          error: action.payload.error,
-          data: {},
-        }
-      }
+          error: action.payload.error
+
+      };
 
     default:
-      return state
+      return state;
   }
 }
 
 
-export default usersReducer;

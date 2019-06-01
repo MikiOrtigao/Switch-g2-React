@@ -5,44 +5,40 @@ export const FETCH_GAS_SUCCESS = 'FETCH_GAS_SUCCESS'
 export const FETCH_GAS_FAILURE = 'FETCH_GAS_FAILURE'
 
 
-export function fetchGAs (){
-  return dispatch => {
+export const fetchGAs  = () => {
+  return (dispatch, getState) => {
     dispatch(fetchGAsStarted()); // antes de fazer o get, coloca o loading a true
     axios
-      .get(`http://localhost:9999/geographic_area_settings/areas`)
+      .get(`http://localhost:9999/houseMonitoring/currentHouseAreaTemperature`)
       .then(res => {
         dispatch(fetchGAsSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })
       .catch(err => {
         dispatch(fetchGAsFailure(err.message));
       });
+    console.log('current state:', getState());
   };
-}
+};
 
-export function fetchGAsStarted () {
-  return {
-    type: FETCH_GAS_STARTED,
-  }
-}
+const fetchGAsStarted = () => ( {
+    type: FETCH_GAS_STARTED
+});
 
-export function fetchGAsSuccess(users) { // cria uma açao
-  return {
+const fetchGAsSuccess = data => ( { // cria uma açao
     type: FETCH_GAS_SUCCESS,
-    payload:{
-      data:
-        {...users}  //passa o array com os dados
+    payload: {
+        ...data  //passa o array com os dados
     }
+});
 
-  }
-}
-export function fetchGAsFailure(message) {
-  return {
+const fetchGAsFailure = error => ( {
+
     type: FETCH_GAS_FAILURE,
     payload: {
-      error: message
+      error
     }
-  }
-}
+
+});
 
 
 

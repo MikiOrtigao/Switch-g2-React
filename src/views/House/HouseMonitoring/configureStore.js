@@ -3,11 +3,9 @@ import thunk from 'redux-thunk';
 
 import Reducers from './Reducers';
 
-export default function configureStore(initialState) {
-  console.log("Store: configureStore");
+export default function configureStore() {
   return createStore(
     Reducers,
-    initialState,
     applyMiddleware(thunk)
   );
 }

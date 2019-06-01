@@ -20,19 +20,9 @@ class US600Test extends Component {
        else {
         if (data.length > 0) {
           const {data} = this.props; // data = this.props.data;
-          const rows = data.map((row, index) => {
-
-            return (
-              <div key={index}>
-                <p>{row.id}</p>
-                <p>{row.name}</p>
-                <p>{row.area}</p>
-              </div>
-            )
-          })
-          return (
-            <p>{rows}</p>
-          );
+          return(<h4 key={data.id}>
+            Current Temperature: {data}
+          </h4>);
         } else {
           return (<h1>No data ....</h1>);
         }
@@ -48,16 +38,16 @@ const mapStateToProps = (state) => {
       data: state.users.data,
       error: state.users.error,
     }}
-}
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    onFetchUsers: () => {
-      dispatch(fetchGAs())
+    onFetchUsers: data => {
+      dispatch(fetchGAs(data))
     }
 
   }
-}
+};
 
 export default connect(
   mapStateToProps,
