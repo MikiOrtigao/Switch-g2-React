@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchGAs } from './Actions';
+import usersData from "../../Users/UsersData";
 
 class US600Test extends Component {
   constructor(props) {
@@ -18,16 +19,19 @@ class US600Test extends Component {
       return (<h1>Loading ....</h1>);
     }
        else {
-        if (data.length > 0) {
           const {data} = this.props; // data = this.props.data;
-          return(<h4 key={data.id}>
-            Current Temperature: {data}
-          </h4>);
-        } else {
-          return (<h1>No data ....</h1>);
-        }
+
+            return (
+              <div>
+
+                <h1>{data}</h1>
+
+              </div>
+          );
+
       }
-    }
+      }
+
 
 }
 
@@ -40,10 +44,10 @@ const mapStateToProps = (state) => {
     }}
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchUsers: data => {
-      dispatch(fetchGAs(data))
+    onFetchUsers: () => {
+      dispatch(fetchGAs())
     }
 
   }
