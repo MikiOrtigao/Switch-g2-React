@@ -28,9 +28,9 @@ class US108NoRedux extends Component {
     const headers = {
       name: "Name",
       floor: "Floor",
-      height: "Height",
-      length: "Length",
-      width: "Width"
+      height: "Height (m)",
+      length: "Length (m)",
+      width: "Width (m)"
     };
 
     var {isLoaded, item} = this.state;
