@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Card, CardBody, CardHeader, Col, Row, Table} from "reactstrap";
 
 class US108NoRedux extends Component {
 
@@ -24,24 +25,48 @@ class US108NoRedux extends Component {
 
   render() {
 
+    const headers = {
+      name: "Name",
+      floor: "Floor",
+      height: "Height",
+      length: "Length",
+      width: "Width"
+    };
+
     var {isLoaded, item} = this.state;
 
     if (!isLoaded) {
       return <div>Loading...</div>
     } else {
       return (
-        <div>
-          <ul>
-            {item.map(item => (
-              <li key={item.name}>
-                Name: {item.name}
-              </li>
-            ))}
-          </ul>
+        <div className="animated fadeIn">
+          <Row>
+            <Col xs="12" lg="6">
+              <Card>
+                <CardBody>
+                  <Table responsive>
+                    <tr>
+                      <th>{headers.name}</th>
+                      <th>{headers.floor}</th>
+                      <th>{headers.height}</th>
+                      <th>{headers.length}</th>
+                      <th>{headers.width}</th>
+                    </tr>
+                    {item.map(row => (
+                      <tr key={row.id}>
+                        <td>{row.name}</td>
+                        <td>{row.floor}</td>
+                        <td>{row.height}</td>
+                        <td>{row.length}</td>
+                        <td>{row.width}</td>
+                      </tr>))}
+                  </Table>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
         </div>
-      );
-    }
-  }
-}
+    );
+    }}}
 
-export default US108NoRedux;
+    export default US108NoRedux;

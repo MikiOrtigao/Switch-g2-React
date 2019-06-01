@@ -21,7 +21,7 @@ class US600 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-                <US600NoRedux  />
+                <US600NoRedux />
             </CardBody>
           </Card>
         </Collapse>
