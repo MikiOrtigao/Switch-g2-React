@@ -12,7 +12,7 @@ class US108NoRedux extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:9999/houseSettings/houseRooms')
+    fetch('http://localhost:9898/houseSettings/houseRooms')
       .then(res => res.json())
       .then((json) => {
         this.setState({

@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
+import {Button, Col, FormGroup, Input} from "reactstrap";
+import US250 from './US250'
 
-class US600NoRedux extends Component {
+class US108Select extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      item: {},
+      item: [],
       isLoaded: false,
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:9898/houseMonitoring/currentHouseAreaTemperature')
+    fetch('http://localhost:9898/houseSettings/houseRooms')
       .then(res => res.json())
       .then((json) => {
         this.setState({
@@ -31,13 +33,18 @@ class US600NoRedux extends Component {
     } else {
       return (
         <div>
-              <h4 key={item.id}>
-              Current Temperature: {item}
-              </h4>
+          <Input type="select" name="select" id="select">
+            <option value="0">Please select</option>
+            {item.map(item => (
+              <option value="1" key={item.name}>
+                Name: {item.name}
+              </option>
+            ))}
+          </Input>
         </div>
       );
     }
   }
 }
 
-export default US600NoRedux;
+export default US108Select;
