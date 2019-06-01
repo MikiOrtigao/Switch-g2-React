@@ -56,7 +56,7 @@ class US108NoRedux extends Component {
                     </thead>
                     <tbody>
                     {item.map(row => (
-                      <tr key={row.id}>
+                      <tr key={row.name}>
                         <td>{row.name}</td>
                         <td>{row.floor}</td>
                         <td>{row.height}</td>
