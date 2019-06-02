@@ -13,7 +13,6 @@ class US108Select extends Component {
       value: ''
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
