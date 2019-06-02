@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Col, FormGroup, Input} from "reactstrap";
+import {Button, CardBody, Col, Form, FormGroup, Input, Label} from "reactstrap";
 import US250 from './US250'
+import US250Button from "./US250Button";
 
 class US108Select extends Component {
 
@@ -9,7 +10,10 @@ class US108Select extends Component {
     this.state = {
       item: [],
       isLoaded: false,
+      value: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -24,23 +28,34 @@ class US108Select extends Component {
       .catch(console.log)
   }
 
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+
   render() {
 
     var {isLoaded, item} = this.state;
-
     if (!isLoaded) {
       return <div>Loading...</div>
     } else {
       return (
         <div>
-          <Input type="select" name="select" id="select">
-            <option value="0">Please select</option>
-            {item.map(item => (
-              <option value="1" key={item.name}>
-                Name: {item.name}
-              </option>
-            ))}
-          </Input>
+          <Form action="" method="post" >
+            <FormGroup>
+              <Label>Select Room</Label>
+              <Input type="select" name="select" id="select" value={this.state.value} onChange={this.handleChange}>
+                <option value="0" onChange={this.handleChange}>Please select</option>
+                {item.map(items => (
+                  <option value={items.name}  key={items.name}>
+                    Name: {items.name}
+                  </option>
+                ))}
+              </Input>
+            </FormGroup>
+          </Form>
+          <US250Button roomID={this.state.value}/>
+
         </div>
       );
     }

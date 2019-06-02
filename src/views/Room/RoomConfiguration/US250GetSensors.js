@@ -8,15 +8,15 @@ class US250GetSensors extends Component {
 
   constructor(props) {
     super(props);
-//    this.toggle = this.toggle.bind(this);
     this.state = {
       item: [],
-      sensors:false
+      sensors:false,
+      roomID: ''
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:9898/roomConfiguration/rooms/B107/sensors')
+    fetch('http://localhost:9898/roomConfiguration/rooms/'+this.props.roomID+'/sensors')
       .then(res => res.json())
       .then((json) => {
         this.setState({
