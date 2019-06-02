@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Collapse, Button, CardBody, Card, Col, Row} from 'reactstrap';
 import DatePickerOneDay from "./DatePickerOneDay";
+import US620Test from "./USRedux/US620Redux/US620Test";
 
 class US620 extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class US620 extends Component {
   }
 
   render() {
+
+
     return (
       <div>
         <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Get the total rainfall
@@ -22,12 +25,13 @@ class US620 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay/>
+              <DatePickerOneDay />
               </span>
               <span>
               <p>
                 <input style={{display: "inline-block"}} type="button" value="Submit"/>
               </p>
+              <US620Test/>
               </span>
             </CardBody>
           </Card>
