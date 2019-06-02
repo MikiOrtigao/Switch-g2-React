@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Card, CardBody, CardHeader, Col, Row, Table} from "reactstrap";
+import {Card, CardBody, Col, Row, Table} from "reactstrap";
 
 class US108NoRedux extends Component {
 

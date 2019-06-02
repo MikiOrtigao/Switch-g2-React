@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import US600NoRedux from "./USNoRedux/US600NoRedux";
-import US600Test from "./US600Test";
+import US600Test from "./US600Redux";
 
 
 class US600 extends Component {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchGAs } from './Actions';
 import usersData from "../../Users/UsersData";
 
-class US600Test extends Component {
+class US600Redux extends Component {
   constructor(props) {
     super(props);
   }
@@ -19,16 +19,26 @@ class US600Test extends Component {
       return (<h1>Loading ....</h1>);
     }
        else {
+         if ({data}===0) {
+           return(
+             <div>
+               <h4>There are no data.
+               </h4>
+             </div>
+           )
+         }
+         else{
             return (
               <div>
                 <h4 key={data}>
-                  Current Temperature: {data}
+                  Current Temperature: {data} ºC
                 </h4>
               </div>
           );
 
       }
       }
+  }
 
 
 }
@@ -53,4 +63,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(US600Test);
+)(US600Redux);

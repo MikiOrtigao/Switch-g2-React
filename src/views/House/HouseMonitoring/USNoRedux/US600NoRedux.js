@@ -32,7 +32,7 @@ class US600NoRedux extends Component {
       return (
         <div>
               <h4 key={item.id}>
-              Current Temperature: {item}
+              Current Temperature: {item} ºC
               </h4>
         </div>
       );

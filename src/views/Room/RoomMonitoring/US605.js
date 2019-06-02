@@ -15,7 +15,7 @@ class US605 extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Get the current temperature in the house area. (US600)</Button>
+        <Button onClick={this.toggle} style={{ backgroundColor: '#FFFFFF', marginBottom: '1rem' }}>Get Current Temperature in a room. (US605)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
