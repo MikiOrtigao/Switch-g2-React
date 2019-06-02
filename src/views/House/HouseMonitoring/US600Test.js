@@ -14,18 +14,16 @@ class US600Test extends Component {
 
   render() {
 
-    const { loading, data } = this.props.users;
+    const { loading,data } = this.props;
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     }
        else {
-          const {data} = this.props; // data = this.props.data;
-
             return (
               <div>
-
-                <h1>{data}</h1>
-
+                <h4 key={data}>
+                  Current Temperature: {data}
+                </h4>
               </div>
           );
 
@@ -37,11 +35,10 @@ class US600Test extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: {
-      loading: state.users.loading,
-      data: state.users.data,
-      error: state.users.error,
-    }}
+      loading: state.loading,
+      data: state.data,
+      error: state.error
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

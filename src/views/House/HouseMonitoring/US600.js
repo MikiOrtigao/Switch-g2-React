@@ -3,6 +3,7 @@ import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import US600NoRedux from "./USNoRedux/US600NoRedux";
 import US600Test from "./US600Test";
 
+
 class US600 extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,7 @@ class US600 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-                <US600NoRedux />
+                <US600Test />
             </CardBody>
           </Card>
         </Collapse>

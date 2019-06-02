@@ -59,9 +59,9 @@ class US108NoRedux extends Component {
                       <tr key={row.name}>
                         <td>{row.name}</td>
                         <td>{row.floor}</td>
-                        <td>{row.height}</td>
-                        <td>{row.length}</td>
-                        <td>{row.width}</td>
+                        <td>{row.height}m</td>
+                        <td>{row.length}m</td>
+                        <td>{row.width}m</td>
                       </tr>))}
                     </tbody>
                   </Table>
