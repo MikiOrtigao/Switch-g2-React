@@ -9,7 +9,7 @@ import {
 const initialstate = {
   loading: false,
   error: null,
-  amplitude: []
+  amplitude: {}
 };
 
 
@@ -20,21 +20,21 @@ export default function Reducers633(state = initialstate, action) {
         ...state,
         loading: true,
         error: null,
-        amplitude: []
+        amplitude: {}
       };
     case FETCH_AMP_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
-        amplitude: [...action.payload.rainfall]
+        amplitude: {...action.payload.amplitude}
       };
     case FETCH_AMP_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.payload.error,
-        amplitude: []
+        amplitude: {}
       };
 
     default:

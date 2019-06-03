@@ -42,6 +42,7 @@ class US633Test extends Component {
       return (<h1>Loading ....</h1>);
     }
     else {
+      const{amplitude} = this.props;
       return (
         <div>
           <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Get the day with the
@@ -50,7 +51,7 @@ class US633Test extends Component {
             <Card>
               <CardBody>
                 <DatePickerWithTwoDates getDates={this.handleIntervalPicker} numberOfMonths={numberOfMonths}/>
-                <h5 key={this.props.amplitude.value}>The highest amplitude was {this.props.amplitude.value} on the date {this.props.amplitude.date}</h5>
+                <h5 key={amplitude.value}>The highest amplitude was {amplitude.value} on the date {amplitude.date}</h5>
                 </CardBody>
             </Card>
           </Collapse>

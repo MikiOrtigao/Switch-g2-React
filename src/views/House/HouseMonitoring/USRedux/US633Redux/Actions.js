@@ -36,7 +36,7 @@ export function fetchAmplitudeSuccess (data) { // cria uma açao
   return {
     type: FETCH_AMP_SUCCESS,
     payload: {
-      amplitude: [...data] //passa o array com os dados
+      amplitude: data //passa o array com os dados
     }
   }
 }
