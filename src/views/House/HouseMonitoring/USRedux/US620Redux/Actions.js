@@ -14,7 +14,7 @@ export const fetchTotalRainfalls = ({ date }) => {
       })
 
       .then(res => {
-        dispatch(fetchRainfallSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
+        dispatch(fetchRainfallSuccess(res.rainfall)); // chegaram os resultados (dados) , loading fica a falso
       })
       .catch(err => {
         dispatch(fetchRainfallFailure(err.message));
@@ -29,11 +29,11 @@ export function fetchRainfallStarted () {
   }
 }
 
-export function fetchRainfallSuccess (data) { // cria uma açao
+export function fetchRainfallSuccess (rainfall) { // cria uma açao
   return {
     type: FETCH_RF_SUCCESS,
     payload: {
-     data: data //passa o array com os dados
+     rainfall: rainfall //passa o array com os dados
     }
   }
 }

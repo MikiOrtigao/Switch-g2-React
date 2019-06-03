@@ -1,43 +1,43 @@
 import axios from 'axios';
 
-export const FETCH_GAS_STARTED = 'FETCH_GAS_STARTED';
-export const FETCH_GAS_SUCCESS = 'FETCH_GAS_SUCCESS';
-export const FETCH_GAS_FAILURE = 'FETCH_GAS_FAILURE';
+export const FETCH_T_STARTED = 'FETCH_T_STARTED';
+export const FETCH_T_SUCCESS = 'FETCH_T_SUCCESS';
+export const FETCH_T_FAILURE = 'FETCH_T_FAILURE';
 
 
-export function fetchGAs () {
+export function fetchTemp () {
   return dispatch => {
-    dispatch(fetchGAsStarted()); // antes de fazer o get, coloca o loading a true
+    dispatch(fetchTempStarted()); // antes de fazer o get, coloca o loading a true
     axios
       .get(`http://localhost:9898/houseMonitoring/currentHouseAreaTemperature`)
       .then(res => {
-        dispatch(fetchGAsSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
+        dispatch(fetchTempSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })
       .catch(err => {
-        dispatch(fetchGAsFailure(err.message));
+        dispatch(fetchTempFailure(err.message));
       });
 
   };
 }
 
-export function fetchGAsStarted () {
+export function fetchTempStarted () {
   return {
-    type: FETCH_GAS_STARTED
+    type: FETCH_T_STARTED
   }
 }
 
-export function fetchGAsSuccess (data) { // cria uma açao
+export function fetchTempSuccess (data) { // cria uma açao
   return {
-    type: FETCH_GAS_SUCCESS,
+    type: FETCH_T_SUCCESS,
     payload: {
-     data: data //passa o array com os dados
+     temp: data //passa o array com os dados
     }
   }
 }
 
-export function fetchGAsFailure (message) {
+export function fetchTempFailure (message) {
 return {
-  type: FETCH_GAS_FAILURE,
+  type: FETCH_T_FAILURE,
   payload: {
     error: message
   }

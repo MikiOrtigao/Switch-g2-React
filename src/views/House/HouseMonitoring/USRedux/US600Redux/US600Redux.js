@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchGAs } from './Actions';
+import { fetchTemp } from './Actions';
 
 class US600Redux extends Component {
   constructor(props) {
@@ -8,17 +8,17 @@ class US600Redux extends Component {
   }
 
   componentDidMount() {
-    this.props.onFetchUsers();
+    this.props.onFetchTemp();
   }
 
   render() {
 
-    const { loading,data } = this.props;
+    const { loading,temp } = this.props;
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     }
        else {
-         if ({data}===0) {
+         if ({temp}===0) {
            return(
              <div>
                <h4>There are no data.
@@ -29,8 +29,8 @@ class US600Redux extends Component {
          else{
             return (
               <div>
-                <h4 key={data}>
-                  Current Temperature: {data} ºC
+                <h4 key={temp}>
+                  Current Temperature: {temp} ºC
                 </h4>
               </div>
           );
@@ -44,16 +44,16 @@ class US600Redux extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      loading: state.loading,
-      data: state.data,
-      error: state.error
+      loading: state.Reducers600.loading,
+      temp: state.Reducers600.temp,
+      error: state.Reducers600.error
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchUsers: () => {
-      dispatch(fetchGAs())
+    onFetchTemp: () => {
+      dispatch(fetchTemp())
     }
 
   }

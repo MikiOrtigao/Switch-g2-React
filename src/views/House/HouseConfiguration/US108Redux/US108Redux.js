@@ -52,9 +52,9 @@ class US108Redux extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      loading: state.loading,
-      data: state.data,
-      error: state.error
+      loading: state.Reducer108.loading,
+      data: state.Reducer108.data,
+      error: state.Reducer108.error
     }
 };
 

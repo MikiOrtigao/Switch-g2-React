@@ -1,7 +1,7 @@
 import {
-  FETCH_GAS_STARTED,
-  FETCH_GAS_SUCCESS,
-  FETCH_GAS_FAILURE,
+  FETCH_T_STARTED,
+  FETCH_T_SUCCESS,
+  FETCH_T_FAILURE,
 
 } from './Actions'
 
@@ -9,32 +9,32 @@ import {
 const initialstate = {
     loading: false,
     error: null,
-    data: 0
+    temp: 0
 };
 
 
-export default function usersReducer(state = initialstate, action) {
+export default function Reducers600 (state = initialstate, action) {
   switch (action.type) {
-    case FETCH_GAS_STARTED:
+    case FETCH_T_STARTED:
       return {
         ...state,
           loading: true,
           error: null,
-          data: 0
+          temp: 0
       };
-    case FETCH_GAS_SUCCESS:
+    case FETCH_T_SUCCESS:
       return {
         ...state,
           loading: false,
           error: null,
-          data: action.payload.data
+          temp: action.payload.temp
       };
-    case FETCH_GAS_FAILURE:
+    case FETCH_T_FAILURE:
       return {
         ...state,
           loading: false,
           error: action.payload.error,
-          data: 0
+          temp: 0
       };
 
     default:

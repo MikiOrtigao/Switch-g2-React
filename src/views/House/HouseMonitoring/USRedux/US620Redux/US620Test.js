@@ -1,54 +1,46 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {fetchGAs, fetchTotalRainfalls, fetchtTotalRainfalls} from './Actions';
-import usersData from "../../../../Users/UsersData";
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchTotalRainfalls} from './Actions';
+import Reducer620 from "../US600Redux/Reducers600";
 
 class US620Test extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount = (date) => {
-    this.props.onFetchRainfall(date);
-  }
-
-  handleDayChange(day) {
-    this.setState({ date: day });
+  componentDidMount() {
+    this.props.onFetchRainfall();
   }
 
   render() {
-
-    const { loading,data } = this.props;
+    const {loading, rainfall} = this.props;
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     }
-       else {
-            return (
-              <div>
-                <h4 key={data}>
-                  Current Temperature: {data}
-                </h4>
-              </div>
-          );
-
-      }
-      }
-
-
+    else {
+      return (
+        <div>
+          <h4 key={rainfall}>
+            Total Rainfall: {rainfall}
+          </h4>
+        </div>
+      );
+    }
+  }
 }
 
 const mapStateToProps = (state) => {
   return {
-      loading: state.loading,
-      data: state.data,
-      error: state.error
-    }
+    loading: state.Reducer620.loading,
+    rainfall: state.Reducer620.rainfall,
+    error: state.Reducer620.error
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchRainfall: (date) => {
-      dispatch(fetchTotalRainfalls({date}))
+    onFetchRainfall: () => {
+      dispatch(fetchTotalRainfalls({}))
     }
 
   }
