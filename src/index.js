@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 
 
-import configureStore from './views/House/HouseMonitoring/configureStore';
+import configureStore from './configureStore.js';
 
 
 // If you want your app to work offline and load faster, you can change
