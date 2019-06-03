@@ -13,8 +13,8 @@ class US610GetTemperature extends Component {
   }
 
   componentDidMount() {
-    fetch("http:http://localhost:9898/roomMonitoring/dayMaxTemperature", {
-      method: 'POST',
+    fetch("https://localhost:9898/roomMonitoring/dayMaxTemperature", {
+      method: 'GET',
       body: JSON.stringify({
         date: this.state.day,
         roomId: this.state.roomID,
@@ -30,11 +30,8 @@ class US610GetTemperature extends Component {
     var {id, item} = this.state;
     return (
       <div>
-
-
         <p>The maximum temperature on the day
           was {item} ºC</p>
-
       </div>
     );
   }
