@@ -17,18 +17,6 @@ class US250 extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:9898/roomConfiguration/rooms/B107/sensors')
-      .then(res => res.json())
-      .then((json) => {
-        this.setState({
-          isLoaded: true,
-          item: json,
-        })
-      })
-      .catch(console.log)
-  }
-
   toggle() {
     this.setState(state => ({collapse: !state.collapse}));
   }
@@ -48,13 +36,7 @@ class US250 extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              <Form action="" method="post">
-                <FormGroup>
-                  <Label>Select Room</Label>
-                  <US108Select name={id}/>
-                </FormGroup>
-              </Form>
-              <US250Button/>
+              <US108Select/>
             </CardBody>
           </Card>
         </Collapse>

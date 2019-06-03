@@ -10,6 +10,7 @@ export default class DatePickerOneDay extends React.Component {
       selectedDay: undefined,
     };
   }
+
   handleDayChange(day) {
     this.setState({ selectedDay: day });
   }

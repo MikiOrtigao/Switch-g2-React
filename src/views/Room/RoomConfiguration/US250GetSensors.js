@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import {Collapse, Button, CardBody, Card, Form, FormGroup, Label, Input} from 'reactstrap';
-import US108Select from "./US108Select";
 
 
 class US250GetSensors extends Component {
 
-
   constructor(props) {
     super(props);
-//    this.toggle = this.toggle.bind(this);
     this.state = {
       item: [],
-      sensors:false
+      sensors:false,
+      roomID: ''
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:9898/roomConfiguration/rooms/B107/sensors')
+    fetch('http://localhost:9898/roomConfiguration/rooms/'+this.props.roomID+'/sensors')
       .then(res => res.json())
       .then((json) => {
         this.setState({

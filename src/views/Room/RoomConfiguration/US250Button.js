@@ -5,13 +5,20 @@ import US250GetSensors from "./US250GetSensors";
 
 class US250Button extends Component {
 
-  state = {isHidden: true}
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHidden: true,
+      roomID: ''
+    }
+  }
+
   toggleHidden = ()=>this.setState((prevState)=>({isHidden: !prevState.isHidden}))
   render(){
     return(
       <div>
      <Button onClick={this.toggleHidden}>Get the Room Sensors</Button>
-        {!this.state.isHidden && <US250GetSensors/>}
+        {!this.state.isHidden && <US250GetSensors roomID = {this.props.roomID}/>}
       </div>
     )
   }
