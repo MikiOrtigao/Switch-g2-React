@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Input, Label} from "reactstrap";
-import US250Button from "./US250Button";
+import US610Button from "./US610Button";
 
-class US108Select extends Component {
+class SelectRoom extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       item: [],
       isLoaded: false,
-      value: ''
+      value: '',
+      day:''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -41,7 +42,7 @@ class US108Select extends Component {
         <div>
           <Form action="" method="post" >
             <FormGroup>
-              <Label>Select Room</Label>
+              <h6>Select a Room</h6>
               <Input type="select" name="select" id="select" value={this.state.value} onChange={this.handleChange}>
                 <option value="0" onChange={this.handleChange}>Please select</option>
                 {item.map(items => (
@@ -52,11 +53,11 @@ class US108Select extends Component {
               </Input>
             </FormGroup>
           </Form>
-          <US250Button roomID={this.state.value}/>
+          <US610Button roomID={this.state.value} day={this.state.day}/>
         </div>
       );
     }
   }
 }
 
-export default US108Select;
+export default SelectRoom;

@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {Collapse, Button, CardBody, Card, Col, Row} from 'reactstrap';
 import DatePickerOneDay from "./DatePickerOneDay";
+import SelectRoom from "./SelectRoom"
 
 class US610 extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = {collapse: false};
+    this.state = {
+      collapse: false,
+      day:''
+    };
   }
 
   toggle() {
@@ -21,13 +25,9 @@ class US610 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay/>
+              <DatePickerOneDay selectedDay={this.state.day}/>
               </span>
-              <span>
-              <p>
-                <input style={{display: "inline-block"}} type="button" value="Submit"/>
-              </p>
-              </span>
+              <SelectRoom day={this.state.day}/>
             </CardBody>
           </Card>
         </Collapse>
