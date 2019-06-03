@@ -17,6 +17,10 @@ class US610 extends Component {
     this.setState(state => ({collapse: !state.collapse}));
   }
 
+  handleDays(){
+
+  }
+
   render() {
     return (
       <div>
@@ -25,7 +29,7 @@ class US610 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay selectedDay={this.state.day}/>
+              <DatePickerOneDay getDays={this.handleDays}/>
               </span>
               <SelectRoom day={this.state.day}/>
             </CardBody>

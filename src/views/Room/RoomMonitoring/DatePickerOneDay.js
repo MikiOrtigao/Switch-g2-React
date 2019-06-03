@@ -13,6 +13,11 @@ export default class DatePickerOneDay extends React.Component {
   handleDayChange(day) {
     this.setState({ selectedDay: day });
   }
+
+  getDates=()=>{
+    this.props.getDays(this.state.selectedDay)
+  }
+
   render() {
     const { selectedDay } = this.state;
     return (

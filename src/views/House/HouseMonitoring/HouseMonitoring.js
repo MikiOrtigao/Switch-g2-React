@@ -5,6 +5,7 @@ import US623 from "./US623";
 import US630 from "./US630";
 import US631 from "./US631";
 import US633 from "./US633";
+import US633Test from "./USRedux/US633Redux/US633Test";
 
 class HouseMonitoring extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class HouseMonitoring extends Component {
         <US623/>
         <US630/>
         <US631/>
-        <US633/>
+        <US633Test/>
       </div>
     );
   }
