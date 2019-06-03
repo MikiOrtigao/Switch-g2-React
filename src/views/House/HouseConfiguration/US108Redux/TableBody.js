@@ -11,17 +11,17 @@ class TableBody extends Component {
     const {data} = this.props; // data = this.props.data;
     if (data.length > 0) {
       return (
-          <tbody>
-            {data.map((todo) => (
-              <tr key={todo.name}>
-              <td>{todo.name}</td>
-              <td>{todo.floor}</td>
-              <td>{todo.height}m</td>
-              <td>{todo.length}m</td>
-              <td>{todo.width}m</td>
-              </tr>
-            ))}
-          </tbody>
+        <tbody>
+        {data.map((todo) => (
+          <tr key={todo.name}>
+            <td>{todo.name}</td>
+            <td>{todo.floor}</td>
+            <td>{todo.height}m</td>
+            <td>{todo.length}m</td>
+            <td>{todo.width}m</td>
+          </tr>
+        ))}
+        </tbody>
 
       );
     } else {

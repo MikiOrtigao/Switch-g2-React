@@ -1,34 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Helmet from 'react-helmet';
-import DayPicker, { DateUtils } from 'react-day-picker';
+import DayPicker, {DateUtils} from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-export default class DatePickerWithTwoDates extends React.Component {
-  static defaultProps = {
-    numberOfMonths: 2,
-  };
+ class DatePickerWithTwoDates extends Component {
+
   constructor(props) {
     super(props);
-    this.handleDayClick = this.handleDayClick.bind(this);
-    this.handleResetClick = this.handleResetClick.bind(this);
+
     this.state = this.getInitialState();
   }
+
   getInitialState() {
     return {
       from: undefined,
       to: undefined,
     };
   }
-  handleDayClick(day) {
+
+  getInterval =()=>{
+    console.log ("getInterval: "+ JSON.stringify(this.props))
+    this.props.getDates(this.state.from,this.state.to)
+  }
+
+  handleDayClick=(day)=> {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
+    this.getInterval();
   }
-  handleResetClick() {
+
+  handleResetClick=()=> {
     this.setState(this.getInitialState());
   }
+
   render() {
-    const { from, to } = this.state;
-    const modifiers = { start: from, end: to };
+    console.log ("render: "+ JSON.stringify(this.props))
+    const {from, to} = this.state;
+    const modifiers = {start: from, end: to};
     return (
       <div className="RangeExample">
         <h6>
@@ -48,7 +56,7 @@ export default class DatePickerWithTwoDates extends React.Component {
         <DayPicker
           className="Selectable"
           numberOfMonths={this.props.numberOfMonths}
-          selectedDays={[from, { from, to }]}
+          selectedDays={[from, {from, to}]}
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
         />
@@ -76,3 +84,4 @@ export default class DatePickerWithTwoDates extends React.Component {
   }
 }
 
+export default DatePickerWithTwoDates;

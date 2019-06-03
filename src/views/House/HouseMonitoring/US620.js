@@ -25,7 +25,7 @@ class US620 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay />
+              <DatePickerOneDay/>
               </span>
               <span>
               <p>

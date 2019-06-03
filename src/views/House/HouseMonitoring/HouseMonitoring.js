@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import US600 from "./US600";
 import US620 from "./US620";
 import US623 from "./US623";
 import US630 from "./US630";
 import US631 from "./US631";
 import US633 from "./US633";
+import US633Test from "./USRedux/US633Redux/US633Test";
 
 class HouseMonitoring extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {collapse: false};
   }
 
   toggle() {
-    this.setState(state => ({ collapse: !state.collapse }));
+    this.setState(state => ({collapse: !state.collapse}));
   }
 
   render() {
@@ -28,7 +29,7 @@ class HouseMonitoring extends Component {
         <US623/>
         <US630/>
         <US631/>
-        <US633/>
+        <US633Test/>
       </div>
     );
   }

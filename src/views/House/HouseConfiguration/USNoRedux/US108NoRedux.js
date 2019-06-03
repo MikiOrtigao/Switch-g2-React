@@ -70,7 +70,9 @@ class US108NoRedux extends Component {
             </Col>
           </Row>
         </div>
-    );
-    }}}
+      );
+    }
+  }
+}
 
-    export default US108NoRedux;
+export default US108NoRedux;
