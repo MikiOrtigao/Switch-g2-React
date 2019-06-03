@@ -7,34 +7,34 @@ import {
 
 
 const initialstate = {
-  loading: false,
-  error: null,
-  data: 0
+    loading: false,
+    error: null,
+    rainfall: 0
 };
 
 
-export default function usersReducer(state = initialstate, action) {
+export default function reducer620(state = initialstate, action) {
   switch (action.type) {
     case FETCH_RF_STARTED:
       return {
         ...state,
-        loading: true,
-        error: null,
-        data: 0
+          loading: true,
+          error: null,
+          rainfall: 0
       };
     case FETCH_RF_SUCCESS:
       return {
         ...state,
-        loading: false,
-        error: null,
-        data: action.payload.data
+          loading: false,
+          error: null,
+          rainfall: action.payload.rainfall
       };
     case FETCH_RF_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: action.payload.error,
-        data: 0
+          loading: false,
+          error: action.payload.error,
+          rainfall: 0
       };
 
     default:

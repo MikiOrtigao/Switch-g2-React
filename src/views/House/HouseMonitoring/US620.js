@@ -31,7 +31,7 @@ class US620 extends Component {
               <p>
                 <input style={{display: "inline-block"}} type="button" value="Submit"/>
               </p>
-              <US620Test/>
+              <US620Test />
               </span>
             </CardBody>
           </Card>
