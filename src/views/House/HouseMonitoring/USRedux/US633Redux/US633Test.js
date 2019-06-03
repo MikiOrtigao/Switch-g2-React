@@ -16,7 +16,7 @@ class US633Test extends Component {
   }
 
   componentDidMount() {
-    this.props.onFetchAmplitude();
+    this.props.onFetchAmplitude(this.state.from, this.state.to);
   }
 
   handleIntervalPicker = (from, to) => {
@@ -50,7 +50,7 @@ class US633Test extends Component {
             <Card>
               <CardBody>
                 <DatePickerWithTwoDates getDates={this.handleIntervalPicker} numberOfMonths={numberOfMonths}/>
-                <h1>The highest amplitude was {amplitude.value} on the date {amplitude.date}</h1>
+                  <h5 key={item.value}>The highest amplitude was {item.value} on the date {item.date}</h5>
               </CardBody>
             </Card>
           </Collapse>
@@ -70,8 +70,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchAmplitude: () => {
-      dispatch(fetchAmplitude({}))
+    onFetchAmplitude: (from, to) => {
+      dispatch(fetchAmplitude({from, to}))
     }
 
   }

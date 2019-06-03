@@ -5,11 +5,11 @@ export const FETCH_AMP_SUCCESS = 'FETCH_AMP_SUCCESS';
 export const FETCH_AMP_FAILURE = 'FETCH_AMP_FAILURE';
 
 
-export const fetchAmplitude = ({ initialDate, finalDate }) => {
+export const fetchAmplitude = ({ from, to }) => {
   return dispatch => {
-    dispatch(fetchAmplitudeStarted()); // antes de fazer o get, coloca o loading a true
+    dispatch(fetchAmplitudeStarted(from, to)); // antes de fazer o get, coloca o loading a true
     axios
-      .get(`http://localhost:9898/houseMonitoring/highestAmplitude?initialDate=`+initialDate+`&finalDate=`+finalDate, {
+      .get(`http://localhost:9898/houseMonitoring/highestAmplitude?initialDate=`+from+`&finalDate=`+to, {
       })
 
       .then(res => {
@@ -22,9 +22,13 @@ export const fetchAmplitude = ({ initialDate, finalDate }) => {
   };
 }
 
-export function fetchAmplitudeStarted () {
+export function fetchAmplitudeStarted (from, to) {
   return {
-    type: FETCH_AMP_STARTED
+    type: FETCH_AMP_STARTED,
+    payload: {
+      from: from,
+      to: to//passa o array com os dados
+    }
   }
 }
 
@@ -32,7 +36,7 @@ export function fetchAmplitudeSuccess (data) { // cria uma açao
   return {
     type: FETCH_AMP_SUCCESS,
     payload: {
-      amplitude: data //passa o array com os dados
+      amplitude: [...data] //passa o array com os dados
     }
   }
 }
