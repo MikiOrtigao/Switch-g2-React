@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import US600 from "./US600";
 import US620 from "./US620";
 import US623 from "./US623";
@@ -10,11 +10,11 @@ class HouseMonitoring extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {collapse: false};
   }
 
   toggle() {
-    this.setState(state => ({ collapse: !state.collapse }));
+    this.setState(state => ({collapse: !state.collapse}));
   }
 
   render() {

@@ -5,7 +5,7 @@ export const FETCH_GAS_SUCCESS = 'FETCH_GAS_SUCCESS';
 export const FETCH_GAS_FAILURE = 'FETCH_GAS_FAILURE';
 
 
-export function fetchGAs () {
+export function fetchGAs() {
   return dispatch => {
     dispatch(fetchGAsStarted()); // antes de fazer o get, coloca o loading a true
     axios
@@ -25,28 +25,28 @@ export function fetchGAs () {
   };
 }
 
-export function fetchGAsStarted () {
+export function fetchGAsStarted() {
   return {
     type: FETCH_GAS_STARTED
   }
 }
 
-export function fetchGAsSuccess (data) { // cria uma açao
+export function fetchGAsSuccess(data) { // cria uma açao
   return {
     type: FETCH_GAS_SUCCESS,
     payload: {
-     body: [] //passa o array com os dados
+      body: [] //passa o array com os dados
     }
   }
 }
 
-export function fetchGAsFailure (message) {
-return {
-  type: FETCH_GAS_FAILURE,
-  payload: {
-    error: message
+export function fetchGAsFailure(message) {
+  return {
+    type: FETCH_GAS_FAILURE,
+    payload: {
+      error: message
+    }
   }
-}
 }
 
 

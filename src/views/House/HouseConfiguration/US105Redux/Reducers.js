@@ -7,9 +7,9 @@ import {
 
 
 const initialstate = {
-    loading: false,
-    error: null,
-    body: []
+  loading: false,
+  error: null,
+  body: []
 };
 
 
@@ -18,23 +18,23 @@ export default function usersReducer(state = initialstate, action) {
     case FETCH_GAS_STARTED:
       return {
         ...state,
-          loading: true,
-          error: null,
-          body: []
+        loading: true,
+        error: null,
+        body: []
       };
     case FETCH_GAS_SUCCESS:
       return {
         ...state,
-          loading: false,
-          error: null,
-          body: [...action.payload.body]
+        loading: false,
+        error: null,
+        body: [...action.payload.body]
       };
     case FETCH_GAS_FAILURE:
       return {
         ...state,
-          loading: false,
-          error: action.payload.error,
-          body: []
+        loading: false,
+        error: action.payload.error,
+        body: []
       };
 
     default:

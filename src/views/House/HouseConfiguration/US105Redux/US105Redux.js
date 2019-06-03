@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchGAs } from './Actions';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchGAs} from './Actions';
 import {Card, CardBody, Col, Row, Table} from "reactstrap";
 import TableHeader from "./TableHeader";
 import TableBody from "./TableBody"
@@ -16,7 +16,7 @@ class US105Redux extends Component {
 
   render() {
 
-    const { loading,data } = this.props;
+    const {loading, data} = this.props;
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     } else {
@@ -28,7 +28,7 @@ class US105Redux extends Component {
                 <CardBody>
                   <Table responsive>
                     <TableHeader headers={headers}/>
-                    <TableBody data={data} />
+                    <TableBody data={data}/>
                   </Table>
                 </CardBody>
               </Card>
@@ -37,18 +37,18 @@ class US105Redux extends Component {
         </div>
       );
 
-      }
-      }
+    }
+  }
 
 
 }
 
 const mapStateToProps = (state) => {
   return {
-      loading: state.loading,
-      data: state.data,
-      error: state.error
-    }
+    loading: state.loading,
+    data: state.data,
+    error: state.error
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -10,18 +10,19 @@ export default class DatePickerOneDay extends React.Component {
       selectedDay: undefined,
     };
   }
+
   handleDayChange(day) {
-    this.setState({ selectedDay: day });
+    this.setState({selectedDay: day});
   }
-  
-  
+
+
   render() {
-    const { selectedDay } = this.state;
+    const {selectedDay} = this.state;
     return (
       <div>
         {selectedDay && <h6>Day: {selectedDay.toLocaleDateString()}</h6>}
         {!selectedDay && <h6>Choose a day</h6>}
-        <DayPickerInput onDayChange={this.handleDayChange} />
+        <DayPickerInput onDayChange={this.handleDayChange}/>
       </div>
     );
   }
