@@ -37,7 +37,7 @@ class US633Test extends Component {
 
   render() {
     const numberOfMonths = 2;
-    const {loading, amplitude} = this.props;
+    const {loading} = this.props;
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     }
@@ -50,8 +50,8 @@ class US633Test extends Component {
             <Card>
               <CardBody>
                 <DatePickerWithTwoDates getDates={this.handleIntervalPicker} numberOfMonths={numberOfMonths}/>
-                  <h5 key={item.value}>The highest amplitude was {item.value} on the date {item.date}</h5>
-              </CardBody>
+                <h5 key={this.props.amplitude.value}>The highest amplitude was {this.props.amplitude.value} on the date {this.props.amplitude.date}</h5>
+                </CardBody>
             </Card>
           </Collapse>
         </div>

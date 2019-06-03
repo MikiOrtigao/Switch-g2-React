@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import DayPicker, {DateUtils} from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import {Button} from "reactstrap";
 
- class DatePickerWithTwoDates extends Component {
+class DatePickerWithTwoDates extends Component {
 
   constructor(props) {
     super(props);
@@ -18,23 +19,25 @@ import 'react-day-picker/lib/style.css';
     };
   }
 
-  getInterval =()=>{
-    console.log ("getInterval: "+ JSON.stringify(this.props))
-    this.props.getDates(this.state.from,this.state.to)
+  getInterval = () => {
+    console.log("getInterval: " + JSON.stringify(this.props))
+    this.props.getDates(this.state.from, this.state.to)
   }
 
-  handleDayClick=(day)=> {
+  handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
     this.getInterval();
   }
-
-  handleResetClick=()=> {
+  handleDaysClick = () => {
+    this.getInterval();
+  }
+  handleResetClick = () => {
     this.setState(this.getInitialState());
   }
 
   render() {
-    console.log ("render: "+ JSON.stringify(this.props))
+    console.log("render: " + JSON.stringify(this.props))
     const {from, to} = this.state;
     const modifiers = {start: from, end: to};
     return (
@@ -60,6 +63,10 @@ import 'react-day-picker/lib/style.css';
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
         />
+
+        <Button style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}} onClick={this.handleDaysClick}>
+          Submit
+        </Button>
         <Helmet>
           <style>{`
   .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
