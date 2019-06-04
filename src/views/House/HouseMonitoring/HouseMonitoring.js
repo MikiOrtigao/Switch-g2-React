@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import US600 from "./US600";
-import US620 from "./US620";
+import US620 from "./USRedux/US620Redux/US620";
 import US630 from "./USRedux/US630Redux/US630Redux";
 import US631 from "./USRedux/US631Redux/US631";
 import US633Test from "./USRedux/US633Redux/US633Test";

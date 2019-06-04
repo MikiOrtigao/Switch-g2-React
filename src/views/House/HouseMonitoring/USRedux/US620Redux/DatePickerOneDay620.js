@@ -1,8 +1,9 @@
 import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import {Button} from "reactstrap";
 
-export default class DatePickerOneDay620 extends React.Component {
+export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleDayChange = this.handleDayChange.bind(this);
@@ -10,22 +11,29 @@ export default class DatePickerOneDay620 extends React.Component {
       selectedDay: undefined,
     };
   }
-
   handleDayChange(day) {
     this.setState({ selectedDay: day });
+    this.getOneDay();
+  }
+  getOneDay = () => {
+    console.log("getInterval: " + JSON.stringify(this.props))
+    this.props.getDays(this.state.selectedDay)
   }
 
-  getDay =() => {
-    this.props.getDate(this.state.selectedDay)
+  handleDaysClick = () => {
+    this.getOneDay();
   }
-
   render() {
     const { selectedDay } = this.state;
     return (
       <div>
-        {selectedDay && <h6>Day: {selectedDay.toLocaleDateString()}</h6>}
-        {!selectedDay && <h6>Choose a day</h6>}
-        <DayPickerInput onDayChange={this.handleDayChange}/>
+        {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
+        {!selectedDay && <p>Choose a day</p>}
+        <DayPickerInput onDayChange={this.handleDayChange} />
+        <br></br>
+        <Button style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}} onClick={this.handleDaysClick}>
+          Submit date
+        </Button>
       </div>
     );
   }

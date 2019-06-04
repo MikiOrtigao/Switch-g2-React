@@ -9,7 +9,7 @@ import {
 const initialstate = {
   loading: false,
   error: null,
-  totalRainfall: {}
+  totalRainfall: 0
 };
 
 
@@ -20,21 +20,21 @@ export default function Reducers620(state = initialstate, action) {
         ...state,
         loading: true,
         error: null,
-        totalRainfall: {}
+        totalRainfall: 0
       };
     case FETCH_RAINFALL_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
-        totalRainfall: {...action.payload.totalRainfall}
+        totalRainfall: action.payload.totalRainfall
       };
     case FETCH_RAINFALL_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.payload.error,
-        totalRainfall: {}
+        totalRainfall: 0
       };
 
     default:

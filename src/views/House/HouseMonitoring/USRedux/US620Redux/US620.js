@@ -24,7 +24,7 @@ class US620 extends Component {
     if (selectedDay !== undefined) {
       const initialDay = selectedDay.toISOString().substring(0, 10);
       this.setState({selectedDay: selectedDay});
-      this.props.onFetchColdDay(initialDay)
+      this.props.onFetchTotalRainfall(initialDay)
 
     }
   }
@@ -48,8 +48,8 @@ class US620 extends Component {
           <Collapse isOpen={this.state.collapse}>
           <Card>
               <CardBody>
-                <DatePickerOneDay620 getDay={this.handleDayPicker} numberOfMonths={numberOfMonths}/>
-                <h5 key={totalRainfall.value}>The coldest day was {totalRainfall.value} on the date {totalRainfall.date}</h5>
+                <DatePickerOneDay620 getDays={this.handleDayPicker} numberOfMonths={numberOfMonths}/>
+                <h5 key={totalRainfall}>The coldest day was {totalRainfall} </h5>
                 </CardBody>
             </Card>
           </Collapse>
