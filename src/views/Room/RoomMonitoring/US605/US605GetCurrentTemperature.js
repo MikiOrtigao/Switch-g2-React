@@ -26,7 +26,8 @@ class US605GetCurrentTemperature extends Component {
     var {item} = this.state;
     return (
       <div>
-        {item.toString()}
+        <p></p>
+        {item.toString()} Cº
       </div>
     );
   }
