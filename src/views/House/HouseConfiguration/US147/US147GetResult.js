@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
 
-class US145GetRooms extends Component {
+class US147GetResult extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       item: [],
       sensors: false,
-      gridID: ''
+      gridID: '',
+      roomID: ''
     }
   }
 
@@ -28,7 +29,8 @@ class US145GetRooms extends Component {
     var {id, item} = this.state;
     return (
       <div>
-        <p></p>
+
+
         <ul>
           {item.map(item => (
             <li key={item.name}>
@@ -44,4 +46,4 @@ class US145GetRooms extends Component {
 
 }
 
-export default US145GetRooms;
+export default US147GetResult;
