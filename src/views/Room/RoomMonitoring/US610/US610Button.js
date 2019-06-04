@@ -10,28 +10,19 @@ class US610Button extends Component {
     this.state = {
       isHidden: true,
       item:{},
-      roomID: '',
-      day:''
+      roomID:this.props.roomID,
+      day:this.props.day
     }
   }
 
-  componentDidMount() {
-    fetch("https://localhost:9898/roomMonitoring/dayMaxTemperature/"+this.state.roomID+"?initialDate="+this.state.day)
-      .then(res => res.json())
-      .then((json) => {
-        this.setState({
-          item: json,
-        })
-      })
-      .catch(console.log)
-  }
 
   toggleHidden = ()=>this.setState((prevState)=>({isHidden: !prevState.isHidden}))
+
   render(){
     return(
       <div>
-        <Button onClick={this.toggleHidden}>Get the Maximum temperature in the day {this.state.day}</Button>
-        {!this.state.isHidden && <US610GetTemperature item={this.state.item}/>}
+        <Button onClick={this.toggleHidden}>Get the Maximum temperature in the day {this.props.day} in the room {this.props.roomID}</Button>
+        {!this.state.isHidden && <US610GetTemperature day={this.props.day} roomID={this.props.roomID}/>}
       </div>
     )
   }

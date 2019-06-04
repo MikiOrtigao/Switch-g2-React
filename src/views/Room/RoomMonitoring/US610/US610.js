@@ -9,7 +9,7 @@ class US610 extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       collapse: false,
-      day:''
+      selectedDay:''
     };
   }
 
@@ -17,14 +17,17 @@ class US610 extends Component {
     this.setState(state => ({collapse: !state.collapse}));
   }
 
-  handleDays = (day) => {
-    console.log("handleDays: date"+ JSON.stringify(day))
-    if (day !== undefined) {
-//      const day = day.toISOString().substring(0, 10);
-      this.setState({day: day});    }
+  handleDayPicker = (selectedDay) => {
+
+    console.log("handleDayPicker:"+ JSON.stringify(selectedDay))
+    if (selectedDay !== undefined) {
+      const initialDay = selectedDay.toISOString().substring(0, 10);
+      this.setState({selectedDay: initialDay});
+    }
   }
 
   render() {
+    const numberOfMonths = 1;
     return (
       <div>
         <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Get the maximum temperature in a room in a given day. (US610)</Button>
@@ -32,9 +35,9 @@ class US610 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay610 getDays={this.handleDays}/>
+              <DatePickerOneDay610 getDays={this.handleDayPicker} numberOfMonths={numberOfMonths}/>
               </span>
-              <SelectRoom day={this.state.day}/>
+              <SelectRoom day={this.state.selectedDay}/>
             </CardBody>
           </Card>
         </Collapse>

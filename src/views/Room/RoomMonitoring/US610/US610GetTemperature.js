@@ -6,16 +6,27 @@ class US610GetTemperature extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: {},
+      item: 0,
     }
   }
+  componentDidMount() {
+    console.log(this.props);
+    fetch("http://localhost:9898/roomMonitoring/dayMaxTemperature/"+this.props.roomID+"?initialDate="+this.props.day)
+      .then(res => res.json())
+      .then((json) => {
+        this.setState({
+          item: json,
+        })
+      })
+      .catch(console.log)
+  }
+
 
   render() {
-    var {item} = this.props;
     return (
       <div>
-        <p>The maximum temperature on the day
-          was {item} ºC</p>
+        <p key={this.state.item}>The maximum temperature
+         was {this.state.item}ºC</p>
       </div>
     );
   }

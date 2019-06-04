@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, Input, Label} from "reactstrap";
+import {Form, FormGroup, Input} from "reactstrap";
 import US610Button from "./US610Button";
 
 class SelectRoom extends Component {
@@ -10,7 +10,6 @@ class SelectRoom extends Component {
       item: [],
       isLoaded: false,
       value: '',
-      day:''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -31,10 +30,17 @@ class SelectRoom extends Component {
     this.setState({value: event.target.value});
   }
 
+  handleProperties(){
+    return {
+      roomID: this.state.value,
+      day: this.props.day
+    };
+  }
 
   render() {
-
+    console.log(this.handleProperties())
     var {isLoaded, item} = this.state;
+
     if (!isLoaded) {
       return <div>Loading...</div>
     } else {
@@ -53,7 +59,8 @@ class SelectRoom extends Component {
               </Input>
             </FormGroup>
           </Form>
-          <US610Button roomID={this.state.value} day={this.state.day}/>
+
+          <US610Button day={this.props.day} roomID={this.state.value}/>
         </div>
       );
     }

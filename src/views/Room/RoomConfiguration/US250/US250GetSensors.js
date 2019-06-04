@@ -8,7 +8,6 @@ class US250GetSensors extends Component {
     this.state = {
       item: [],
       sensors:false,
-      roomID: ''
     }
   }
 
@@ -34,8 +33,6 @@ class US250GetSensors extends Component {
     var {id, item} = this.state;
     return (
       <div>
-
-
           <ul>
             {item.map(item => (
               <li key={item.name}>
