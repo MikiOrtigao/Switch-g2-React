@@ -41,7 +41,7 @@ class RoomCreator extends React.Component {
 
   };
 
-  handleInputChange = (attribute) => (event) => { // temos de arranjar maneira de fazer set state a cada um dos atributos ^^ lá em cima, à medida que são alterados no form. isto é uma...
+  handleInputChange = (attribute) => (event) => {
     console.log(event);
     this.props.getRoom(this.state.name, this.state.floor, this.state.width, this.state.length, this.state.height);
 
@@ -60,7 +60,7 @@ class RoomCreator extends React.Component {
 
         <form onSubmit={this.submitFormHandler}>
           <div>
-            <input value={this.state.name} type="text" name="name" ref={"name"} onChange{() => this.handleInputChange('name')}/>
+            <input value={this.state.name} type="text" name="name" ref={"name"} onChange={this.handleInputChange}/>
             <input value={this.state.floor} type="text" name="floor" ref={"floor"} onChange={this.handleInputChange}/>
             <input value={this.state.width} type="number" name="width" ref={"width"} onChange={this.handleInputChange}/>
             <input value={this.state.length} type="number" name="length" ref={"length"}
