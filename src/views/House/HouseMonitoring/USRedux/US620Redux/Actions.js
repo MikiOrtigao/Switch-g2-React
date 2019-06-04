@@ -1,46 +1,48 @@
 import axios from 'axios';
 
-export const FETCH_RF_STARTED = 'FETCH_RF_STARTED';
-export const FETCH_RF_SUCCESS = 'FETCH_RF_SUCCESS';
-export const FETCH_RF_FAILURE = 'FETCH_RF_FAILURE';
+export const FETCH_RAINFALL_STARTED = 'FETCH_RAINFALL_STARTED';
+export const FETCH_RAINFALL_SUCCESS = 'FETCH_RAINFALL_SUCCESS';
+export const FETCH_RAINFALL_FAILURE = 'FETCH_RAINFALL_FAILURE';
 
 
-export const fetchTotalRainfalls = ({ date }) => {
+export const fetchTotalRainfallDay = ({ selectedDay }) => {
   return dispatch => {
-    dispatch(fetchRainfallStarted()); // antes de fazer o get, coloca o loading a true
+    dispatch(fetchTotalRainfallStarted(selectedDay)); // antes de fazer o get, coloca o loading a true
     axios
-      .get(`http://localhost:9898/houseMonitoring/totalRainfall`, {
-        date
+      .get(`http://localhost:9898/houseMonitoring/totalRainfall?date=`+selectedDay, {
       })
 
       .then(res => {
-        dispatch(fetchRainfallSuccess(res.rainfall)); // chegaram os resultados (dados) , loading fica a falso
+        dispatch(fetchTotalRainfallSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })
       .catch(err => {
-        dispatch(fetchRainfallFailure(err.message));
+        dispatch(fetchTotalRainfallFailure(err.message));
       });
 
   };
 }
 
-export function fetchRainfallStarted () {
+export function fetchTotalRainfallStarted (selectedDay) {
   return {
-    type: FETCH_RF_STARTED
-  }
-}
-
-export function fetchRainfallSuccess (rainfall) { // cria uma açao
-  return {
-    type: FETCH_RF_SUCCESS,
+    type: FETCH_RAINFALL_STARTED,
     payload: {
-     rainfall: rainfall //passa o array com os dados
+      selectedDay: selectedDay
     }
   }
 }
 
-export function fetchRainfallFailure (message) {
+export function fetchTotalRainfallSuccess (data) { // cria uma açao
+  return {
+    type: FETCH_RAINFALL_SUCCESS,
+    payload: {
+      totalRainfall: data //passa o array com os dados
+    }
+  }
+}
+
+export function fetchTotalRainfallFailure (message) {
 return {
-  type: FETCH_RF_FAILURE,
+  type: FETCH_RAINFALL_FAILURE,
   payload: {
     error: message
   }

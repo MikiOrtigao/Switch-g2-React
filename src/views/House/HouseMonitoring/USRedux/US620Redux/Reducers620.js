@@ -1,40 +1,40 @@
 import {
-  FETCH_RF_STARTED,
-  FETCH_RF_SUCCESS,
-  FETCH_RF_FAILURE,
+  FETCH_RAINFALL_STARTED,
+  FETCH_RAINFALL_SUCCESS,
+  FETCH_RAINFALL_FAILURE,
 
 } from './Actions'
 
 
 const initialstate = {
-    loading: false,
-    error: null,
-    rainfall: 0
+  loading: false,
+  error: null,
+  totalRainfall: {}
 };
 
 
-export default function reducer620(state = initialstate, action) {
+export default function Reducers620(state = initialstate, action) {
   switch (action.type) {
-    case FETCH_RF_STARTED:
+    case FETCH_RAINFALL_STARTED:
       return {
         ...state,
-          loading: true,
-          error: null,
-          rainfall: 0
+        loading: true,
+        error: null,
+        totalRainfall: {}
       };
-    case FETCH_RF_SUCCESS:
+    case FETCH_RAINFALL_SUCCESS:
       return {
         ...state,
-          loading: false,
-          error: null,
-          rainfall: action.payload.rainfall
+        loading: false,
+        error: null,
+        totalRainfall: {...action.payload.totalRainfall}
       };
-    case FETCH_RF_FAILURE:
+    case FETCH_RAINFALL_FAILURE:
       return {
         ...state,
-          loading: false,
-          error: action.payload.error,
-          rainfall: 0
+        loading: false,
+        error: action.payload.error,
+        totalRainfall: {}
       };
 
     default:
