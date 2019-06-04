@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RoomCreator from "./RoomCreator"
+import RoomCreator from "./US105Redux/RoomCreator"
 import {
   Collapse,
   Button,

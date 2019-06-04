@@ -5,7 +5,7 @@ import US130 from './US130'
 import US145 from './US145/US145'
 import US147 from './US147/US147'
 import US149 from './US149'
-import US105Redux from "./US105Redux/US105Redux";
+import US105 from "./US105";
 
 
 
@@ -25,7 +25,7 @@ class Example extends Component {
       <div>
         <h2>Welcome to the House Configuration Menu.</h2>
         <h4>Please select the US you want to run.</h4>
-        <US105Redux/>
+        <US105/>
         <US108/>
         <US109/>
         <US130/>

@@ -8,10 +8,12 @@ export const FETCH_ROOM_INFO_FAILURE = 'FETCH_ROOM_INFO_FAILURE';
 export const fetchRoom = ({name, floor, width, length, height}) => {
   return dispatch => {
     dispatch(fetchRoomInfo(name, floor, width, length, height)); // antes de fazer o get, coloca o loading a true
+    const data = {name, floor, width, length, height};
     axios
-      .post('http://localhost:9898/houseSettings/room?name='+name+
-        '&floor='+floor+'&width='+width+'&length='+length+'&height='+height,{})
-
+      .post('http://localhost:9898/houseSettings/room', data, //falta autorização
+        {
+          headers: {'Content-Type': 'application/json'}
+        })
       .then(res => {
         dispatch(fetchRoomInfoSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })
@@ -20,6 +22,9 @@ export const fetchRoom = ({name, floor, width, length, height}) => {
       });
   };
 };
+
+//Daqui para baixo, arranjar.
+
 
 export function fetchRoomInfo(name, floor, width, length, height) {
   return {
