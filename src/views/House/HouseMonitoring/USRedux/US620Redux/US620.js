@@ -49,7 +49,7 @@ class US620 extends Component {
           <Card>
               <CardBody>
                 <DatePickerOneDay620 getDays={this.handleDayPicker} numberOfMonths={numberOfMonths}/>
-                <h5 key={totalRainfall}>The coldest day was {totalRainfall} </h5>
+                <h5 key={totalRainfall}>The total rainfall was {totalRainfall} </h5>
                 </CardBody>
             </Card>
           </Collapse>
