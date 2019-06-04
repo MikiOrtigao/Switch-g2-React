@@ -1,48 +1,51 @@
 import axios from 'axios';
 
-export const FETCH_GAS_STARTED = 'FETCH_GAS_STARTED';
-export const FETCH_GAS_SUCCESS = 'FETCH_GAS_SUCCESS';
-export const FETCH_GAS_FAILURE = 'FETCH_GAS_FAILURE';
+export const FETCH_ROOM_INFO_STARTED = 'FETCH_ROOM_INFO_STARTED';
+export const FETCH_ROOM_INFO_SUCCESS = 'FETCH_ROOM_INFO_SUCCESS';
+export const FETCH_ROOM_INFO_FAILURE = 'FETCH_ROOM_INFO_FAILURE';
 
 
-export function fetchGAs() {
+export const fetchRoom = ({name, floor, width, length, height}) => {
   return dispatch => {
-    dispatch(fetchGAsStarted()); // antes de fazer o get, coloca o loading a true
+    dispatch(fetchRoomInfo(name, floor, width, length, height)); // antes de fazer o get, coloca o loading a true
     axios
-    ({
-      method: "POST",
-      url: "http://localhost:9898/houseSettings/room",
-      body: JSON.stringify(data),
-    })
+      .post('http://localhost:9898/houseSettings/room?name='+name+
+        '&floor='+floor+'&width='+width+'&length='+length+'&height='+height,{})
 
       .then(res => {
-        dispatch(fetchGAsSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
+        dispatch(fetchRoomInfoSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
       })
       .catch(err => {
-        dispatch(fetchGAsFailure(err.message));
+        dispatch(fetchRoomInfoFailure(err.message));
       });
-
   };
 }
 
-export function fetchGAsStarted() {
+export function fetchRoomInfo(name, floor, width, length, height) {
   return {
-    type: FETCH_GAS_STARTED
-  }
-}
-
-export function fetchGAsSuccess(data) { // cria uma açao
-  return {
-    type: FETCH_GAS_SUCCESS,
+    type: FETCH_ROOM_INFO_STARTED,
     payload: {
-      body: [] //passa o array com os dados
+      name: name,
+      floor: floor,
+      width: width,
+      length: length,
+      height: height
     }
   }
 }
 
-export function fetchGAsFailure(message) {
+export function fetchRoomInfoSuccess(data) { // cria uma açao
   return {
-    type: FETCH_GAS_FAILURE,
+    type: FETCH_ROOM_INFO_SUCCESS,
+    payload: {
+      room: data //passa o array com os dados
+    }
+  }
+}
+
+export function fetchRoomInfoFailure(message) {
+  return {
+    type: FETCH_ROOM_INFO_FAILURE,
     payload: {
       error: message
     }

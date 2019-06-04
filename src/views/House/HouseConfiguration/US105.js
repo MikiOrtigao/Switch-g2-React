@@ -1,16 +1,12 @@
 import React, {Component} from 'react';
+import RoomCreator from "./RoomCreator"
 import {
   Collapse,
   Button,
   CardBody,
   Card,
   CardHeader,
-  FormGroup,
-  Label,
-  Input,
-  FormFeedback,
-  Col,
-  Form, FormText, CardFooter
+  CardFooter
 } from 'reactstrap';
 
 class US105 extends Component {
@@ -35,32 +31,7 @@ class US105 extends Component {
               <strong>US 105</strong>
             </CardHeader>
             <CardBody>
-              <Form action="" method="post">
-                <FormGroup>
-                  <Label>Room Name</Label>
-                  <Input type="text" placeholder="Enter Name.."/>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Room Description</Label>
-                  <Input type="text" placeholder="Enter Description.."/>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Room House Floor</Label>
-                  <Input type="number" placeholder="Enter Floor.."/>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Room Width</Label>
-                  <Input type="number" placeholder="Enter Width.."/>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Room Length</Label>
-                  <Input type="number" placeholder="Enter Length.."/>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Room Height</Label>
-                  <Input type="number" placeholder="Enter Height.."/>
-                </FormGroup>
-              </Form>
+              <RoomCreator/>
             </CardBody>
             <CardFooter>
               <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>

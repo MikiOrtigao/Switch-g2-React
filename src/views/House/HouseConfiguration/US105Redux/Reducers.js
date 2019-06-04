@@ -1,7 +1,7 @@
 import {
-  FETCH_GAS_STARTED,
-  FETCH_GAS_SUCCESS,
-  FETCH_GAS_FAILURE,
+  FETCH_ROOM_INFO_STARTED,
+  FETCH_ROOM_INFO_SUCCESS,
+  FETCH_ROOM_INFO_FAILURE,
 
 } from './Actions'
 
@@ -9,32 +9,32 @@ import {
 const initialstate = {
   loading: false,
   error: null,
-  body: []
+  room: {}
 };
 
 
-export default function usersReducer(state = initialstate, action) {
+export default function Reducer105(state = initialstate, action) {
   switch (action.type) {
-    case FETCH_GAS_STARTED:
+    case FETCH_ROOM_INFO_STARTED:
       return {
         ...state,
         loading: true,
         error: null,
-        body: []
+        room: {}
       };
-    case FETCH_GAS_SUCCESS:
+    case FETCH_ROOM_INFO_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
-        body: [...action.payload.body]
+        room: {...action.payload.room}
       };
-    case FETCH_GAS_FAILURE:
+    case FETCH_ROOM_INFO_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.payload.error,
-        body: []
+        room: {}
       };
 
     default:
