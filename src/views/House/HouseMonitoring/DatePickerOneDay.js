@@ -2,7 +2,7 @@ import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 
-export default class DatePickerOneDay extends React.Component {
+export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleDayChange = this.handleDayChange.bind(this);
@@ -10,22 +10,16 @@ export default class DatePickerOneDay extends React.Component {
       selectedDay: undefined,
     };
   }
-
   handleDayChange(day) {
     this.setState({ selectedDay: day });
   }
-
-  getDay =() => {
-    this.props.getDate(this.state.selectedDay)
-  }
-
   render() {
     const { selectedDay } = this.state;
     return (
       <div>
-        {selectedDay && <h6>Day: {selectedDay.toLocaleDateString()}</h6>}
-        {!selectedDay && <h6>Choose a day</h6>}
-        <DayPickerInput onDayChange={this.handleDayChange}/>
+        {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
+        {!selectedDay && <p>Choose a day</p>}
+        <DayPickerInput onDayChange={this.handleDayChange} />
       </div>
     );
   }

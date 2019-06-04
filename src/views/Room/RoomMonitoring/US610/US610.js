@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Collapse, Button, CardBody, Card, Col, Row} from 'reactstrap';
-import DatePickerOneDay from "./DatePickerOneDay";
+import DatePickerOneDay610 from "./DatePickerOneDay610";
 import SelectRoom from "./SelectRoom"
 
 class US610 extends Component {
@@ -17,8 +17,11 @@ class US610 extends Component {
     this.setState(state => ({collapse: !state.collapse}));
   }
 
-  handleDays(){
-
+  handleDays = (day) => {
+    console.log("handleDays: date"+ JSON.stringify(day))
+    if (day !== undefined) {
+//      const day = day.toISOString().substring(0, 10);
+      this.setState({day: day});    }
   }
 
   render() {
@@ -29,7 +32,7 @@ class US610 extends Component {
           <Card>
             <CardBody>
               <span>
-              <DatePickerOneDay getDays={this.handleDays}/>
+              <DatePickerOneDay610 getDays={this.handleDays}/>
               </span>
               <SelectRoom day={this.state.day}/>
             </CardBody>
