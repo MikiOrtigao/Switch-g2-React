@@ -26,16 +26,17 @@ class US105Redux extends Component {
 
     console.log("handleRoomCreator: name" + JSON.stringify(name) + "floor: " + JSON.stringify(floor) + "width: " + JSON.stringify(width) + "length: " + JSON.stringify(length) + "height: " + JSON.stringify(height))
     {
-      const name = name;
-      const floor = floor;
-      const width = width;
-      const length = length;
-      const height = height;
-      this.setState({name: name, floor: floor, width: width, length: length, height: height});
-      this.props.onFetchRoom(name, floor, width, length, height)
-
+      if (name !== undefined && floor !== undefined && width !== undefined && length !== undefined && height !== undefined) {
+        const name = name;
+        const floor = floor;
+        const width = width;
+        const length = length;
+        const height = height;
+        this.setState({name: name, floor: floor, width: width, length: length, height: height});
+        this.props.onFetchRoom(name, floor, width, length, height)
+      }
     }
-  }
+  };
 
   toggle() {
     this.setState(state => ({collapse: !state.collapse}));
