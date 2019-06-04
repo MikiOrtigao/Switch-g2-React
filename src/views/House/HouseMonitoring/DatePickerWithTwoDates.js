@@ -1,17 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import DayPicker, {DateUtils} from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import {Button} from "reactstrap";
 
-export default class DatePickerWithTwoDates extends React.Component {
-  static defaultProps = {
-    numberOfMonths: 2,
-  };
+class DatePickerWithTwoDates extends Component {
 
   constructor(props) {
     super(props);
-    this.handleDayClick = this.handleDayClick.bind(this);
-    this.handleResetClick = this.handleResetClick.bind(this);
+
     this.state = this.getInitialState();
   }
 
@@ -22,16 +19,25 @@ export default class DatePickerWithTwoDates extends React.Component {
     };
   }
 
-  handleDayClick(day) {
-    const range = DateUtils.addDayToRange(day, this.state);
-    this.setState(range);
+  getInterval = () => {
+    console.log("getInterval: " + JSON.stringify(this.props))
+    this.props.getDates(this.state.from, this.state.to)
   }
 
-  handleResetClick() {
+  handleDayClick = (day) => {
+    const range = DateUtils.addDayToRange(day, this.state);
+    this.setState(range);
+    this.getInterval();
+  }
+  handleDaysClick = () => {
+    this.getInterval();
+  }
+  handleResetClick = () => {
     this.setState(this.getInitialState());
   }
 
   render() {
+    console.log("render: " + JSON.stringify(this.props))
     const {from, to} = this.state;
     const modifiers = {start: from, end: to};
     return (
@@ -57,6 +63,10 @@ export default class DatePickerWithTwoDates extends React.Component {
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
         />
+
+        <Button style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}} onClick={this.handleDaysClick}>
+          Submit
+        </Button>
         <Helmet>
           <style>{`
   .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
@@ -81,3 +91,4 @@ export default class DatePickerWithTwoDates extends React.Component {
   }
 }
 
+export default DatePickerWithTwoDates;
