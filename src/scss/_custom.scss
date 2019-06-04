@@ -35,7 +35,6 @@
   background: #d8c2a5;
 }
 
-
 .sidebar .sidebar-close {
   position: absolute;
   right: 0;
@@ -64,7 +63,7 @@
 
 .sidebar .sidebar-form .form-control {
   color: #323232;
-  background:  #d8c2a5;
+  background: #d8c2a5;
   border: 0;
 }
 
@@ -83,6 +82,19 @@
 }
 
 .sidebar-minimized .sidebar .nav-item:hover > .nav-link {
- background: #d8b975;
+  background: #d8b975;
 }
 
+.d-md-down-none {
+  text-align: left;
+  justify-content: left;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}

@@ -26,17 +26,11 @@ class DefaultHeader extends Component {
           full={{ src: logo, width: 100, height: 100, alt: 'SmartHome Logo' }}
           minimized={{ src: sygnet, width: 60, height: 60, alt: 'SmartHome Logo' }}
         />
-        <AppSidebarToggler className="d-md-down-none" display="lg" />
+        <AppSidebarToggler className="d-md-down-none"  />
 
         <Nav align-items="left" className="d-md-down-none" navbar>
           <NavItem className="px-3">
             <NavLink to="/dashboard" className="nav-link" >Home Page</NavLink>
-          </NavItem>
-          <NavItem className="px-lg-3">
-            <Link to="/users" className="nav-link">User</Link>
-          </NavItem>
-          <NavItem className="px-3">
-            <NavLink to="#" className="nav-link">Settings</NavLink>
           </NavItem>
         </Nav>
 

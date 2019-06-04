@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import US600 from "./US600";
 import US620 from "./US620";
 import US623 from "./US623";
-import US630 from "./US630";
+import US630 from "./USRedux/US630Redux/US630Redux";
 import US631 from "./US631";
-import US633 from "./US633";
+
 import US633Test from "./USRedux/US633Redux/US633Test";
 
 class HouseMonitoring extends Component {
