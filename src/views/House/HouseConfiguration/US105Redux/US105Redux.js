@@ -8,6 +8,7 @@ class US105Redux extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.handleRoomCreator = this.handleRoomCreator.bind(this);
     this.state = {
       collapse: false,
       name: undefined,
@@ -18,24 +19,19 @@ class US105Redux extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.onFetchRoom(this.state.name, this.state.floor, this.state.width, this.state.length, this.state.height);
-  }
+  // componentDidMount() {
+  //   this.props.onFetchRoom(this.state.name, this.state.floor, this.state.width, this.state.length, this.state.height);
+  // }
 
-  handleRoomCreator = (name, floor, width, length, height) => {
+  handleRoomCreator (name, floor, width, length, height) {
 
-    console.log("handleRoomCreator: name" + JSON.stringify(name) + "floor: " + JSON.stringify(floor) + "width: " + JSON.stringify(width) + "length: " + JSON.stringify(length) + "height: " + JSON.stringify(height))
-    {
-      if (name !== undefined && floor !== undefined && width !== undefined && length !== undefined && height !== undefined) {
-        const name = name;
-        const floor = floor;
-        const width = width;
-        const length = length;
-        const height = height;
+    console.log("handleRoomCreator: name" + name + "floor: " + floor + "width: " + width + "length: " + length + "height: " + height);
+
+      //if (name !== undefined && floor !== undefined && width !== undefined && length !== undefined && height !== undefined) {
         this.setState({name: name, floor: floor, width: width, length: length, height: height});
         this.props.onFetchRoom(name, floor, width, length, height)
-      }
-    }
+      //}
+
   };
 
   toggle() {
@@ -48,11 +44,7 @@ class US105Redux extends Component {
     if (loading === true) {
       return (<h1>Loading ....</h1>);
     } else {
-      const {name} = this.props;
-      const {floor} = this.props;
-      const {width} = this.props;
-      const {length} = this.props;
-      const {height} = this.props;
+      const {name, floor, width, length, height} = this.state;
       return (
         <div>
           <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Add a new room to the
@@ -60,7 +52,7 @@ class US105Redux extends Component {
           <Collapse isOpen={this.state.collapse}>
             <Card>
               <CardBody>
-                <RoomCreator getRoom={this.handleRoomCreator()}/>
+                <RoomCreator getRoom={this.handleRoomCreator}/>
                 <h5 key={name}>The room has the following
                   details: {name + ',' + floor + ',' + width + ',' + length + ',' + height}</h5>
               </CardBody>
@@ -92,7 +84,6 @@ const mapDispatchToProps = (dispatch) => {
     onFetchRoom: (name, floor, width, length, height) => {
       dispatch(fetchRoom({name, floor, width, length, height}))
     }
-
   }
 };
 

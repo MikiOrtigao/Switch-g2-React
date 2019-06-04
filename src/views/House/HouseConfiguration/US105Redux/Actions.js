@@ -19,7 +19,7 @@ export const fetchRoom = ({name, floor, width, length, height}) => {
         dispatch(fetchRoomInfoFailure(err.message));
       });
   };
-}
+};
 
 export function fetchRoomInfo(name, floor, width, length, height) {
   return {
