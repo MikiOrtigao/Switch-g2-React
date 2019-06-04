@@ -76,13 +76,13 @@ class US105Redux extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    loading: state.usersReducer.loading,
-    name: state.usersReducer.name,
-    floor: state.usersReducer.floor,
-    width: state.usersReducer.width,
-    length: state.usersReducer.length,
-    height: state.usersReducer.height,
-    error: state.usersReducer.error
+    loading: state.Reducer105.loading,
+    name: state.Reducer105.name,
+    floor: state.Reducer105.floor,
+    width: state.Reducer105.width,
+    length: state.Reducer105.length,
+    height: state.Reducer105.height,
+    error: state.Reducer105.error
   }
 };
 
