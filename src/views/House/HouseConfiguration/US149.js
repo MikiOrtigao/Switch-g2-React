@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RoomCreator from "./US105Redux/RoomCreator"
+import GridRoomRemover from "./US149/GridRoomRemover"
 import {
   Collapse,
   Button,
@@ -8,7 +8,7 @@ import {
   CardHeader,
 } from 'reactstrap';
 
-class US105 extends Component {
+class US149 extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -22,15 +22,14 @@ class US105 extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Add a new room to the
-          house. (US105)</Button>
+        <Button onClick={this.toggle} style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}}>Remove a room from a grid. (US149)</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardHeader>
-              <strong>US 105</strong>
+              <strong>US 149</strong>
             </CardHeader>
             <CardBody>
-              <RoomCreator/>
+              <GridRoomRemover/>
             </CardBody>
           </Card>
         </Collapse>
@@ -39,4 +38,4 @@ class US105 extends Component {
   }
 }
 
-export default US105;
+export default US149;
