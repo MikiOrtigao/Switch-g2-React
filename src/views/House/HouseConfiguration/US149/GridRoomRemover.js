@@ -4,7 +4,7 @@ import {Button} from "reactstrap";
 import {fetchRoomFromGrid} from "./Actions";
 import {connect} from 'react-redux';
 
-class RoomCreator extends React.Component {
+class GridRoomRemover extends React.Component {
 
   constructor(props) {
     super(props);

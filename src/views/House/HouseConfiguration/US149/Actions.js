@@ -9,12 +9,11 @@ export const REMOVE_GRID_ROOM_INFO_FAILURE = 'REMOVE_GRID_ROOM_INFO_FAILURE';
 export const fetchRoomFromGrid = ({roomId, gridId}) => {
   return dispatch => {
     dispatch(fetchRoomInfo(roomId, gridId)); // antes de fazer o get, coloca o loading a true
-    const data = {roomId, gridId};
     axios
-      .post('http://localhost:9898/gridSettings/grids', data, //falta autorização
+      .delete('http://localhost:9898/gridSettings/grids'+gridId, //falta autorização
         {
           headers: {'Content-Type': 'application/json'},
-          body: {roomId, gridId}
+          body: {roomId}
         })
       .then(res => {
         dispatch(fetchRoomInfoSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
@@ -40,7 +39,7 @@ export function fetchRoomInfoSuccess(data) { // cria uma açao
   return {
     type: REMOVE_GRID_ROOM_INFO_SUCCESS,
     payload: {
-      room: data //passa o array com os dados
+      message: data,
     }
   }
 }
