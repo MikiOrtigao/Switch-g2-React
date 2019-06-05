@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import US108 from './US108'
-import US109Redux from './US109Redux/US109Redux'
+import US109 from './US109'
 import US130 from './US130'
 import US145 from './US145/US145'
 import US147 from './US147/US147'
@@ -27,7 +27,7 @@ class Example extends Component {
         <h4>Please select the US you want to run.</h4>
         <US105/>
         <US108/>
-        <US109Redux/>
+        <US109/>
         <US130/>
         <US145/>
         <US147/>

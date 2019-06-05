@@ -6,7 +6,9 @@ import {onfetchEditRoom} from './Actions';
 class US109Redux extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      roomID: ""
+  }
     this.state = this.getInitialState();
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
@@ -50,11 +52,10 @@ class US109Redux extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmitHandler}>
+      <>
           <label>
             Name:
-            <input type="text" name="Name" value={this.state.name} onChange={this.onChangeHandler}/>
+            <input type="text" name="Name" value={this.state.roomID} onChange={this.onChangeHandler}/>
           </label>
 
           <label>
@@ -68,21 +69,21 @@ class US109Redux extends Component {
           </label>
 
           <label>
-            Width:
+            Length:
             <input type="text" name="length" value={this.state.length} onChange={this.onChangeHandler}/>
           </label>
 
           <label>
-            Width:
+            Height:
             <input type="text" name="height" value={this.state.height} onChange={this.onChangeHandler}/>
           </label>
 
-          <br></br>
+
           <Button style={{backgroundColor: '#FFFFFF', marginBottom: '1rem'}} onClick={this.onSubmitHandler}>
             Submit
           </Button>
-        </form>
-      </div>
+
+      </>
     )
   }
 
