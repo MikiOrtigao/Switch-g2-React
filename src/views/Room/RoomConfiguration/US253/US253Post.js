@@ -12,7 +12,6 @@ class US253Post extends Component {
 
 
   componentDidMount() {
-
     const sensorId = this.props.sensorId;
     const name = this.props.name;
     const dateStartedFunctioning = this.props.dateStartedFunctioning;
