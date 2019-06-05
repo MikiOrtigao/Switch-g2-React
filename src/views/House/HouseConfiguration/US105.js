@@ -33,10 +33,6 @@ class US105 extends Component {
             <CardBody>
               <RoomCreator/>
             </CardBody>
-            <CardFooter>
-              <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
-              <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
-            </CardFooter>
           </Card>
         </Collapse>
       </div>
