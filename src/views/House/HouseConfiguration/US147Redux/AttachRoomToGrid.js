@@ -4,14 +4,14 @@ import {Button} from "reactstrap";
 import {fetchRoomGrid} from "./Actions";
 import {connect} from 'react-redux';
 
-class RoomCreator extends React.Component {
+class AttachRoomToGrid extends React.Component {
 
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      name: '...',
-      grid:'...'
+      name: '',
+      grid: ''
     };
 
     this.handleInputChange = attribute => event => {
@@ -21,7 +21,7 @@ class RoomCreator extends React.Component {
     };
   }
 
-  handleSubmit(){
+  handleSubmit() {
     this.props.onFetchRoomGrid(this.state);
   }
 
@@ -30,10 +30,9 @@ class RoomCreator extends React.Component {
     const {name, grid} = this.state;
     return (
       <>
-        <input value={this.state.name} type="text" name="name" onChange={this.handleInputChange('name')}/>
-        <input value={this.state.grid} type="text" name="grid" onChange={this.handleInputChange('grid')}/>
-        <p>The room has the following details: {name + grid}</p>
-        <Button onClick={this.handleSubmit}>Save new room configuration</Button>
+        RoomID:<input value={this.state.name} type="text" name="name" onChange={this.handleInputChange('name')}/>
+        GridID:<input value={this.state.grid} type="text" name="grid" onChange={this.handleInputChange('grid')}/>
+        <Button onClick={this.handleSubmit}>Attach Room {name} to {grid} Energy Grid</Button>
       </>
     )
   }
@@ -47,5 +46,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null,mapDispatchToProps)(RoomCreator);
+export default connect(null, mapDispatchToProps)(AttachRoomToGrid);
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Collapse, Button, CardBody, Card, CardHeader, Form, FormGroup, Label, Input, CardFooter} from 'reactstrap';
-import RoomCreator from "./US147Redux/RoomCreator";
+import AttachRoomToGrid from "./US147Redux/AttachRoomToGrid";
 
 class US147 extends Component {
   constructor(props) {
@@ -24,12 +24,8 @@ class US147 extends Component {
               <strong>US 147</strong>
             </CardHeader>
             <CardBody>
-              <RoomCreator/>
+              <AttachRoomToGrid/>
             </CardBody>
-            <CardFooter>
-              <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
-              <Button type="reset" size="sm" color="danger"><i className="fa fa-ban"></i> Reset</Button>
-            </CardFooter>
           </Card>
         </Collapse>
       </div>
