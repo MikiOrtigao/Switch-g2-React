@@ -5,15 +5,16 @@ export const REMOVE_GRID_ROOM_INFO_SUCCESS = 'REMOVE_GRID_ROOM_INFO_SUCCESS';
 export const REMOVE_GRID_ROOM_INFO_FAILURE = 'REMOVE_GRID_ROOM_INFO_FAILURE';
 
 
-export const fetchRoom = ({name, floor, width, length, height}) => {
+
+export const fetchRoomFromGrid = ({roomId, gridId}) => {
   return dispatch => {
-    dispatch(fetchRoomInfo(name, floor, width, length, height)); // antes de fazer o get, coloca o loading a true
-    const data = {name, floor, width, length, height};
+    dispatch(fetchRoomInfo(roomId, gridId)); // antes de fazer o get, coloca o loading a true
+    const data = {roomId, gridId};
     axios
-      .post('http://localhost:9898/houseSettings/room', data, //falta autorização
+      .post('http://localhost:9898/gridSettings/grids', data, //falta autorização
         {
           headers: {'Content-Type': 'application/json'},
-          body: {name, floor, width, length, height}
+          body: {roomId, gridId}
         })
       .then(res => {
         dispatch(fetchRoomInfoSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
@@ -25,15 +26,12 @@ export const fetchRoom = ({name, floor, width, length, height}) => {
 };
 
 
-export function fetchRoomInfo(name, floor, width, length, height) {
+export function fetchRoomInfo(roomId, gridId) {
   return {
     type: REMOVE_GRID_ROOM_INFO_STARTED,
     payload: {
-      name: name,
-      floor: floor,
-      width: width,
-      length: length,
-      height: height
+      roomId: roomId,
+      gridId: gridId,
     }
   }
 }
