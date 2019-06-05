@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import US250 from "./US250/US250";
-import US253 from "./US253";
+import US253 from "./US253/US253";
 
 class RoomMonitoring extends Component {
   constructor(props) {

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Input, Label} from "reactstrap";
-import US250Button from "./US250Button";
 
-class US108Select extends Component {
+class SensorTypesSelect extends Component {
 
   constructor(props) {
     super(props);
@@ -15,7 +14,7 @@ class US108Select extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:9898/houseSettings/houseRooms')
+    fetch('http://localhost:9898/roomConfiguration/types')
       .then(res => res.json())
       .then((json) => {
         this.setState({
@@ -41,22 +40,22 @@ class US108Select extends Component {
         <div>
           <Form action="" method="post" >
             <FormGroup>
-              <Label>Select Room</Label>
+              <Label>Select Sensor Type</Label>
               <Input type="select" name="select" id="select" value={this.state.value} onChange={this.handleChange}>
                 <option value="0" onChange={this.handleChange}>Please select</option>
                 {item.map(items => (
                   <option value={items.name}  key={items.name}>
-                    Name: {items.name}
+                    Type: {items.name}
                   </option>
                 ))}
               </Input>
             </FormGroup>
           </Form>
-          <US250Button roomID={this.state.value}/>
+
         </div>
       );
     }
   }
 }
 
-export default US108Select;
+export default SensorTypesSelect;

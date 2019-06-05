@@ -24,8 +24,6 @@ export const fetchRoom = ({name, floor, width, length, height}) => {
   };
 };
 
-//Daqui para baixo, arranjar.
-
 
 export function fetchRoomInfo(name, floor, width, length, height) {
   return {
@@ -57,6 +55,3 @@ export function fetchRoomInfoFailure(message) {
     }
   }
 }
-
-
-

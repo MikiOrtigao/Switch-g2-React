@@ -4,7 +4,7 @@ import US109 from './US109'
 import US130 from './US130'
 import US145 from './US145/US145'
 import US147 from './US147/US147'
-import US149 from './US149'
+import US149 from './US149/US149'
 import US105 from "./US105";
 
 
