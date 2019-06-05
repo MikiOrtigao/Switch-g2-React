@@ -12,7 +12,8 @@ export const fetchRoom = ({name, floor, width, length, height}) => {
     axios
       .post('http://localhost:9898/houseSettings/room', data, //falta autorização
         {
-          headers: {'Content-Type': 'application/json'}
+          headers: {'Content-Type': 'application/json'},
+          body: {name, floor, width, length, height}
         })
       .then(res => {
         dispatch(fetchRoomInfoSuccess(res.data)); // chegaram os resultados (dados) , loading fica a falso
