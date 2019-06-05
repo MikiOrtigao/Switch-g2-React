@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 
 class US253Post extends Component {
@@ -13,30 +13,36 @@ class US253Post extends Component {
 
   componentDidMount() {
 
-    const sensorID = this.props.sensorId;
+    const sensorId = this.props.sensorId;
     const name = this.props.name;
     const dateStartedFunctioning = this.props.dateStartedFunctioning;
     const typeSensor = this.props.typeSensor;
-    const {opts} = {sensorID,name,dateStartedFunctioning,typeSensor};
-    const options = {
+    console.log(this.props);
+    fetch('http://localhost:9898/roomConfiguration/rooms/' + this.props.roomID + '/sensors', {
       method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(opts)    };
-    console.log(this.props)
-    fetch('http://localhost:9898/roomConfiguration/rooms/'+this.props.roomID+'/sensors',options);
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({sensorId, name, dateStartedFunctioning, typeSensor})
+    })
+      .then(res => res.json())
+      .then((json) => {
+        this.setState({
+          item: json,
+        })
+      })
+      .catch(console.log);
   };
 
 
   render() {
     return (
       <div>
-        <p>The created sensor has the following configuration: {this.props.roomID}, {this.props.sensorId}, { this.props.name},{this.props.dateStartedFunctioning}, {this.props.typeSensor} </p>
+        <p>The created sensor has the following
+          configuration: {this.props.roomID}, {this.props.sensorId}, {this.props.name},{this.props.dateStartedFunctioning}, {this.props.typeSensor} </p>
       </div>
     );
 
 
-}}
+  }
+}
 
 export default US253Post;
