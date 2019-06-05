@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Collapse, Button, CardBody, Card, CardHeader, Form, FormGroup, Label, Input, CardFooter} from 'reactstrap';
+import RoomCreator from "./US147Redux/RoomCreator";
 
 class US147 extends Component {
   constructor(props) {
@@ -23,26 +24,7 @@ class US147 extends Component {
               <strong>US 147</strong>
             </CardHeader>
             <CardBody>
-              <Form action="" method="post">
-                <FormGroup>
-                  <Label>Select Room</Label>
-                  <Input type="select" name="select" id="select">
-                    <option value="0">Please select</option>
-                    <option value="1">Option #1</option>
-                    <option value="2">Option #2</option>
-                    <option value="3">Option #3</option>
-                  </Input>
-                </FormGroup>
-                <FormGroup>
-                  <Label>Select Energy Grid</Label>
-                  <Input type="select" name="select" id="select">
-                    <option value="0">Please select</option>
-                    <option value="1">Option #1</option>
-                    <option value="2">Option #2</option>
-                    <option value="3">Option #3</option>
-                  </Input>
-                </FormGroup>
-              </Form>
+              <RoomCreator/>
             </CardBody>
             <CardFooter>
               <Button type="submit" size="sm" color="primary"><i className="fa fa-dot-circle-o"></i> Submit</Button>
