@@ -52,6 +52,3 @@ export function fetchRoomGridInfoFailure(message) {
     }
   }
 }
-
-
-
